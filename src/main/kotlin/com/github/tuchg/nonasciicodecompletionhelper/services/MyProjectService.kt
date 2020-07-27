@@ -1,7 +1,7 @@
-package org.jetbrains.plugins.template.services
+package com.github.tuchg.nonasciicodecompletionhelper.services
 
 import com.intellij.openapi.project.Project
-import org.jetbrains.plugins.template.MyBundle
+import com.github.tuchg.nonasciicodecompletionhelper.MyBundle
 
 class MyProjectService(project: Project) {
 
