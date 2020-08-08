@@ -4,6 +4,9 @@
 [![Version](https://img.shields.io/jetbrains/plugin/v/14838.svg)](https://plugins.jetbrains.com/plugin/14838)
 [![Downloads](https://img.shields.io/jetbrains/plugin/d/14838.svg)](https://plugins.jetbrains.com/plugin/14838)
 
+
+![Java演示](screenshots/java.GIF)
+
 <!-- Plugin description -->
 
 <a href="https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper">Github</a>主页 | <a href="https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper/issues">Issues</a>页  
@@ -27,6 +30,8 @@ Make the Intellij Platform support Chinese Pinyin Completion
 
 <!-- Plugin description end -->
 
+
+
 ## Installation
 
 - Using IDE built-in plugin system:
@@ -42,6 +47,8 @@ Make the Intellij Platform support Chinese Pinyin Completion
 ## ToDo list
 - [x] 支持多音字补全
 - [ ] 支持非拼音输入补全，如五笔等
+
+![Python 演示](screenshots/py.GIF)
 
 ---
 Plugin based on the [IntelliJ Platform Plugin Template][template].
