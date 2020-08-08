@@ -11,13 +11,11 @@ import com.intellij.codeInsight.lookup.LookupElementPresentation
  */
 class ChineseLookupElement(
         // 据此排序
-    val index: Int = 100,
+        val index: Int = 100,
         // 原文本
-
-    private val original: String?,
+        private val original: String?,
         // 取拼音后的文本
-
-    private val pinyin: String?
+        private val pinyin: String?
 ) : LookupElement() {
 
     private var lookupElement: LookupElement? = null
@@ -42,7 +40,9 @@ class ChineseLookupElement(
 
 //        presentation.isItemTextBold = true
         // presentation.isStrikeout = this.deprecated
+        // 文本【WenBen】
         presentation.itemText = "${this.original}【${this.pinyin}】"
+
         lookupElement?.let {
             presentation.icon = DefaultLookupItemRenderer.getRawIcon(lookupElement)
         }
