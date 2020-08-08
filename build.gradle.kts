@@ -54,7 +54,12 @@ intellij {
 //  Plugin Dependencies:
 //  https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_dependencies.html
 //
-//  setPlugins("java")
+    setPlugins("java")
+}
+
+dependencies {
+//    implementation("com.github.promeg:tinypinyin:2.0.3")
+//    implementation(files("lib/SimplePinyin.jar"))
 }
 
 // Configure detekt plugin.

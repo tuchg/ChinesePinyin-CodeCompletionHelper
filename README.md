@@ -1,25 +1,27 @@
-# Non-ASCII-CodeCompletionHelper
+# ChinesePinyinCodeCompletionHelper
 
 ![Build](https://github.com/tuchg/Non-ASCII-CodeCompletionHelper/workflows/Build/badge.svg)
 [![Version](https://img.shields.io/jetbrains/plugin/v/PLUGIN_ID.svg)](https://plugins.jetbrains.com/plugin/PLUGIN_ID)
 [![Downloads](https://img.shields.io/jetbrains/plugin/d/PLUGIN_ID.svg)](https://plugins.jetbrains.com/plugin/PLUGIN_ID)
 
-## Template ToDo list
-- [x] Create a new [IntelliJ Platform Plugin Template][template] project.
-- [ ] Verify the [pluginGroup](/gradle.properties), [plugin ID](/src/main/resources/META-INF/plugin.xml) and [sources package](/src/main/kotlin).
-- [ ] Review the [Legal Agreements](https://plugins.jetbrains.com/docs/marketplace/legal-agreements.html).
-- [ ] [Publish a plugin manually](https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/publishing_plugin.html) for the first time.
-- [ ] Set the Plugin ID in the above README badges.
-- [ ] Set the [Deployment Token](https://plugins.jetbrains.com/docs/marketplace/plugin-upload.html).
-- [ ] Click the <kbd>Watch</kbd> button on the top of the [IntelliJ Platform Plugin Template][template] to be notified about releases containing new features and fixes.
-
 <!-- Plugin description -->
-This Fancy IntelliJ Platform Plugin is going to be your implementation of the brilliant ideas that you have.
 
-This specific section is a source for the [plugin.xml](/src/main/resources/META-INF/plugin.xml) file which will be
-extracted by the [Gradle](/build.gradle.kts) during the build process.
+[Github](https://github.com/tuchg/Non-ASCII-CodeCompletionHelper)主页 | [Issues](https://github.com/tuchg/Non-ASCII-CodeCompletionHelper/issues)页  
 
-To keep everything working, do not remove `<!-- ... -->` sections. 
+Make the IntelliJ Platform support Chinese Pinyin Completion
+
+让你的 IDE 支持中文编程，享受和英文环境一致的中文智能编码体验
+
+* 拼音输入补全，如输入zw，补全提示中文【ZhongWen】
+* 多音字无差别补全
+* 支持全拼，五笔等各式输入方法（下一版本发布）
+* 兼容JB 全家桶，无差别中文编程，无论是 Java，Kotlin，JavaScript，Golang ,C# 亦或者 Haskell 通通都支持....
+* 函数，变量，类名 ...等标识符，只要能用中文标识的通通都支持
+
+提示：当提示 `no ascii`时，可按提示电灯泡关闭该提示
+
+如果对您有所帮助，别忘了给本项目[Github](https://github.com/tuchg/Non-ASCII-CodeCompletionHelper)主页一个小星星😁
+
 <!-- Plugin description end -->
 
 ## Installation
@@ -34,6 +36,9 @@ To keep everything working, do not remove `<!-- ... -->` sections.
   Download the [latest release](https://github.com/tuchg/Non-ASCII-CodeCompletionHelper/releases/latest) and install it manually using
   <kbd>Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> > <kbd>Install plugin from disk...</kbd>
 
+## ToDo list
+- [x] 支持多音字补全
+- [ ] 支持非拼音输入补全，如五笔等
 
 ---
 Plugin based on the [IntelliJ Platform Plugin Template][template].

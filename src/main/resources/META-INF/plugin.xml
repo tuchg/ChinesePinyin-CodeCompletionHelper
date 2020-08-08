@@ -1,19 +1,16 @@
 <idea-plugin>
     <id>com.github.tuchg.nonasciicodecompletionhelper</id>
-    <name>Non-ASCII-CodeCompletionHelper</name>
+    <name>ChinesePinyin-CodeCompletionHelper</name>
     <vendor>tuchg</vendor>
 
     <!-- Product and plugin compatibility requirements -->
     <!-- https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html -->
     <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.lang</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.tuchg.nonasciicodecompletionhelper.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.tuchg.nonasciicodecompletionhelper.services.MyProjectService"/>
-    </extensions>
 
-    <projectListeners>
-        <listener class="com.github.tuchg.nonasciicodecompletionhelper.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
-    </projectListeners>
+        <completion.contributor language="any"
+                                implementationClass="com.github.tuchg.nonasciicodecompletionhelper.extensions.ChineseCompletionContributor"/>
+    </extensions>
 </idea-plugin>
