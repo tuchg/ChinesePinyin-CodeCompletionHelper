@@ -58,8 +58,8 @@ jobs:
           restore-keys: ${{ runner.os }}-gradle-
 
       # Run detekt
-      - name: Run Linters
-        run: ./gradlew check
+      #      - name: Run Linters
+      #        run: ./gradlew check
 
       # Run verifyPlugin Gradle task
       - name: Verify Plugin
@@ -146,7 +146,7 @@ jobs:
           plugin-location: plugin-artifact/${{ needs.build.outputs.artifact }}
           ide-versions: |
             ideaIC:2019.3
-            ideaIC:2020.1
+            ideaIC:2020.2
 
       # Print the output of the verify step
       - name: Print Logs
