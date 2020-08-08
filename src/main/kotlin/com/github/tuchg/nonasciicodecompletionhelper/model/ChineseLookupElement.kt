@@ -54,7 +54,7 @@ class ChineseLookupElement(
     /**
      * 用于复制一些特殊信息
      */
-    public fun copyOtherLookup(lookupElement: LookupElement): ChineseLookupElement {
+    fun copyOtherLookup(lookupElement: LookupElement): ChineseLookupElement {
         this.lookupElement = lookupElement
         return this
     }

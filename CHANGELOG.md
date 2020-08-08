@@ -1,6 +1,6 @@
 <!-- Keep a Changelog guide -> https://keepachangelog.com -->
 
-# Non-ASCII-CodeCompletionHelper Changelog
+# ChinesePinyin-CodeCompletionHelper Changelog
 
 ## [Unreleased]
 

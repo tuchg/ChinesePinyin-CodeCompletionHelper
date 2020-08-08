@@ -6,7 +6,7 @@
 
 <!-- Plugin description -->
 
-[Github](https://github.com/tuchg/Non-ASCII-CodeCompletionHelper)主页 | [Issues](https://github.com/tuchg/Non-ASCII-CodeCompletionHelper/issues)页  
+[Github](https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper)主页 | [Issues](https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper/issues)页  
 
 Make the IntelliJ Platform support Chinese Pinyin Completion
 

@@ -8,7 +8,10 @@ import com.intellij.openapi.util.text.StringUtil
 import pansong291.simplepinyin.Pinyin
 
 // private val cache = HashMap<String, Boolean>()
-
+/**
+ * @author tuchg
+ * @date 2020-8-1
+ */
 class ChineseCompletionContributor : CompletionContributor() {
 
     override fun fillCompletionVariants(parameters: CompletionParameters, result: CompletionResultSet) {
@@ -26,6 +29,7 @@ class ChineseCompletionContributor : CompletionContributor() {
             if (Pinyin.hasChinese(element.lookupString)) {
                 // 填充补全列表
                 val list = mutableListOf<ChineseLookupElement>()
+                // 从多音字列表提取命中次数最多的一个
                 val closest = Pinyin.toPinyin(element.lookupString, Pinyin.FIRST_UP_CASE).maxBy {
                     val count = countContainsSomeChar(it.toLowerCase(), r.prefixMatcher.prefix)
                     if (count >= r.prefixMatcher.prefix.length)

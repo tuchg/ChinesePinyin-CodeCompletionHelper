@@ -1,1 +1,1 @@
-rootProject.name = "Non-ASCII-CodeCompletionHelper"
+rootProject.name = "ChinesePinyin-CodeCompletionHelper"
