@@ -1,5 +1,6 @@
 package com.github.tuchg.nonasciicodecompletionhelper.model
 
+import com.intellij.codeInsight.completion.InsertionContext
 import com.intellij.codeInsight.lookup.DefaultLookupItemRenderer
 import com.intellij.codeInsight.lookup.LookupElement
 import com.intellij.codeInsight.lookup.LookupElementPresentation
@@ -27,28 +28,25 @@ class ChineseLookupElement(
         return original!!
     }
 
-//    override fun handleInsert(context: InsertionContext) {
-// //        val end = context.tailOffset
-// //        context.document.insertString(end + this.originalSuffix.length, this.pinyinSuffix)
-// //        context.document.deleteString(end, end + this.originalSuffix.length)
-//    }
-
     override fun renderElement(presentation: LookupElementPresentation) {
-//        if (this.detail != null) {
-//            presentation.typeText = this.detail
-//        }
-
-//        presentation.isItemTextBold = true
-        // presentation.isStrikeout = this.deprecated
         // 文本【WenBen】
         presentation.itemText = "${this.original}【${this.pinyin}】"
 
         lookupElement?.let {
-            presentation.icon = DefaultLookupItemRenderer.getRawIcon(lookupElement)
+            // 版本向下兼容问题
+            presentation.icon = DefaultLookupItemRenderer.getRawIcon(lookupElement, true)
         }
+    }
 
-//        presentation.appendTailTextItalic(this.originalSuffix, true)
-//        presentation.tailText = this.originalSuffix
+    /**
+     * 借助原元素的编辑器文本插入能力, 如补全方法调用
+     */
+    override fun handleInsert(context: InsertionContext) {
+        this.lookupElement?.let {
+            if (!(it is ChineseLookupElement))
+                it.handleInsert(context)
+        }
+        super.handleInsert(context)
     }
 
     /**
