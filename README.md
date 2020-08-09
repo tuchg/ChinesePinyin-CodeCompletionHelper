@@ -34,16 +34,16 @@ Make the Intellij Platform support Chinese Pinyin Completion
 
 
 
-## Installation
+## 安装
 
-- Using IDE built-in plugin system:
+- IDE 内建插件市场:
   
-  <kbd>Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>Marketplace</kbd> > <kbd>Search for "ChinesePinyin-CodeCompletionHelper"</kbd> >
+  <kbd>Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>Marketplace</kbd> > <kbd>搜索 "ChinesePinyin-CodeCompletionHelper"</kbd> >
   <kbd>Install Plugin</kbd>
   
-- Manually:
+- 手动:
 
-  Download the [latest release](https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper/releases/latest) and install it manually using
+  展开 [latest release](https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper/releases/latest) 中的 `Assets` , 找到其下`.jar`文件并下载，而后进入 IDE 
   <kbd>Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> > <kbd>Install plugin from disk...</kbd>
 
 ## ToDo list
