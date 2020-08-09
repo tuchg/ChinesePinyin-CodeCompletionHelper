@@ -28,7 +28,7 @@ Make the Intellij Platform support Chinese Pinyin Completion
 
 提示：当提示 `no ascii`时，可按提示电灯泡关闭该提示
 
-如果对您有所帮助，别忘了给本项目<a href="https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper">Github</a>主页一个小星星😁
+如果对您有所帮助，别忘了给本项目<a href="https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper">Github</a>主页一颗Star😁
 
 <!-- Plugin description end -->
 
