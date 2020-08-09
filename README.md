@@ -13,6 +13,8 @@
 
 Make the Intellij Platform support Chinese Pinyin Completion
 
+> 初衷在于，一些业务上不太适合用英语表达的，可以直接用上直白的母语而非拼音，然后像平常写代码那样去调用母语所表达的东西，解决命名困难症
+
 让你的 IDE 支持中文编程，享受和英文环境一致的中文智能编码体验
 
 * 拼音输入补全，如输入zw，补全提示中文【**Z**hong**W**en】
