@@ -12,11 +12,11 @@ import com.intellij.codeInsight.lookup.LookupElementPresentation
  */
 class ChineseLookupElement(
         // 据此排序
-    val index: Int = 100,
+        val index: Int = 100,
         // 原文本
-    private val original: String?,
+        private val original: String?,
         // 取拼音后的文本
-    private val pinyin: String?
+        private val pinyin: String?
 ) : LookupElement() {
 
     private var lookupElement: LookupElement? = null
@@ -43,8 +43,10 @@ class ChineseLookupElement(
      */
     override fun handleInsert(context: InsertionContext) {
         this.lookupElement?.let {
-            if (!(it is ChineseLookupElement))
+            if (!(it is ChineseLookupElement)) {
                 it.handleInsert(context)
+                return
+            }
         }
         super.handleInsert(context)
     }

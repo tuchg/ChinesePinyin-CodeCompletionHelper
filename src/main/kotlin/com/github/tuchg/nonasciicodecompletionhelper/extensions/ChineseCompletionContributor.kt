@@ -32,10 +32,7 @@ class ChineseCompletionContributor : CompletionContributor() {
                 // 从多音字列表提取命中次数最多的一个
                 val closest = Pinyin.toPinyin(element.lookupString, Pinyin.FIRST_UP_CASE).maxBy {
                     val count = countContainsSomeChar(it.toLowerCase(), r.prefixMatcher.prefix)
-                    if (count >= r.prefixMatcher.prefix.length)
-                        count
-                    else
-                        -1
+                    if (count >= r.prefixMatcher.prefix.length) count else -1
                 }
                 closest?.let {
                     list.add(ChineseLookupElement(Int.MIN_VALUE, element.lookupString, it).copyOtherLookup(r.lookupElement))
@@ -69,7 +66,6 @@ class ChinesePrefixMatcher(prefix: String) : PlainPrefixMatcher(prefix) {
 private fun countContainsSomeChar(origin: String, needed: String): Int {
     var count = 0
     for (c in needed) {
-
         if (StringUtil.containsChar(origin, c)) {
             count++
         }

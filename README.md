@@ -5,7 +5,7 @@
 [![Downloads](https://img.shields.io/jetbrains/plugin/d/14838.svg)](https://plugins.jetbrains.com/plugin/14838)
 
 
-![Java演示](screenshots/java.GIF)
+![Python 演示](screenshots/py.GIF)
 
 <!-- Plugin description -->
 
@@ -20,7 +20,7 @@ Make the Intellij Platform support Chinese Pinyin Completion
 * 拼音输入补全，如输入zw，补全提示中文【**Z**hong**W**en】
 * 多音字无差别补全
 * 函数，变量，类名 ...等标识符，只要能用中文标识的通通都支持
-* 支持全拼，五笔等各式输入方法（下一版本发布）
+* 支持全拼，五笔等各式输入方法（某版本发布）
 
 兼容JB 全家桶，无差别中文编程，无论是 Java，Kotlin，JavaScript，Golang ,C# 亦或者 Haskell 通通都支持....
 
@@ -50,7 +50,7 @@ Make the Intellij Platform support Chinese Pinyin Completion
 - [x] 支持多音字补全
 - [ ] 支持非拼音输入补全，如五笔等
 
-![Python 演示](screenshots/py.GIF)
+![Java演示](screenshots/java.GIF)
 
 ---
 Plugin based on the [IntelliJ Platform Plugin Template][template].
