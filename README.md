@@ -17,9 +17,9 @@ Make the Intellij Platform support Chinese Pinyin Completion
 
 让你的 IDE 支持中文编程，享受和英文环境一致的中文智能编码体验
 
-* 拼音输入补全，如输入zw，补全提示中文【**Z**hong**W**en】
+* 拼音输入补全，如上下文存在 中文 标识符, 输入zw，则会补全提示中文【**Z**hong**W**en】
 * 多音字无差别补全
-* 函数，变量，类名 ...等标识符，只要能用中文标识的通通都支持
+* 函数名，变量名，类名 ...等标识符，只要能用中文标识的通通都支持
 * 支持全拼，五笔等各式输入方法（某版本发布）
 
 兼容JB 全家桶，无差别中文编程，无论是 Java，Kotlin，JavaScript，Golang ,C# 亦或者 Haskell 通通都支持....
