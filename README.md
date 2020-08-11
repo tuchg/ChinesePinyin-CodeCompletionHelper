@@ -23,7 +23,7 @@
 * 函数名，变量名，类名 ．．．等标识符，只要能用中文标识的通通都支持
 * 支持全拼，五笔等各式输入方法（未来某版本发布✅）
 
-兼容JB 全家桶，无差别中文编程，无论是 Java，Kotlin，JavaScript，Golang ,C# 亦或者 Haskell 通通都支持....
+兼容JB 全家桶，无差别中文编程，无论是 Java,JavaScript,Golang,Python,C#,Kotlin,C 艹 亦或者 Haskell 等等通通都支持....
 
 <p></p>
 
