@@ -4,14 +4,27 @@
 [![Version](https://img.shields.io/jetbrains/plugin/v/14838.svg)](https://plugins.jetbrains.com/plugin/14838)
 [![Downloads](https://img.shields.io/jetbrains/plugin/d/14838.svg)](https://plugins.jetbrains.com/plugin/14838)
 
+![Java演示](screenshots/java.GIF)
 
-![Python 演示](screenshots/py.GIF)
 
 <!-- Plugin description -->
 
 <a href="https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper">Github</a> | <a href="https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper/issues">Issues</a>  
 
-![演示](https://raw.githubusercontent.com/tuchg/ChinesePinyin-CodeCompletionHelper/master/screenshots/java.GIF)
+
+<h3>English</h3>
+
+> The original intention is that for some businesses that are not suitable for expression in English, you can use a straightforward native language instead of pinyin, and then call what is expressed in your native language as you usually write code to solve some naming difficulties 🤔
+
+Let your IDE support Chinese programming, and enjoy the Chinese intelligent coding experience consistent with the English environment
+
+* Input pinyin completion. Chinese identifier will be shown below. Input `zw` and prompt 中文 [**Z**hong **W**en].
+* Polyphonic words complete without difference
+* Support all identifiers, including variable names, function names, and class names
+
+Compatible with all the Intellij Platform product, indiscriminate Chinese programming, Java, Kotlin, JavaScript, C#，Golang, or Haskell all support...
+
+
 
 <h3>中文</h3>
 > 初衷在于，一些业务上不太适合用英语表达的，可以用上直白的母语而非拼音，然后像平常写代码那样去调用母语所表达的东西，解决部分命名困难症🤔
@@ -30,19 +43,6 @@
 提示：当提示 `no ascii`时，可按提示电灯泡关闭该提示
 
 如果对您有所帮助，别忘了给本项目<a href="https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper">Github</a>主页一颗Star😁
-
-
-<h3>English</h3>
-
-> The original intention is that for some businesses that are not suitable for expression in English, you can use a straightforward native language instead of pinyin, and then call what is expressed in your native language as you usually write code to solve some naming difficulties 🤔
-
-Let your IDE support Chinese programming, and enjoy the Chinese intelligent coding experience consistent with the English environment
-
-* Input pinyin completion. Chinese identifier will be shown below. Input `zw` and prompt 中文 [**Z**hong **W**en].
-* Polyphonic words complete without difference
-* Support all identifiers, including variable names, function names, and class names
-
-Compatible with all the Intellij Platform product, indiscriminate Chinese programming, Java, Kotlin, JavaScript, C#，Golang, or Haskell all support...
 
 <!-- Plugin description end -->
 
@@ -64,7 +64,8 @@ Compatible with all the Intellij Platform product, indiscriminate Chinese progra
 - [x] 支持多音字补全
 - [ ] 支持非拼音输入补全，如五笔等
 
-![Java演示](screenshots/java.GIF)
+![Python 演示](screenshots/py.GIF)
+
 
 ---
 Plugin based on the [IntelliJ Platform Plugin Template][template].
