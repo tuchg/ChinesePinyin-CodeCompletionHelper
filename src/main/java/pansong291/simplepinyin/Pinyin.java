@@ -25,12 +25,6 @@ public final class Pinyin {
      * 全部小写
      */
     public static final int LOW_CASE = 1;
-    /**
-     * @param str      输入字符串
-     * @param caseType 大小写类型
-     * @return 多音字拼接的结果数组
-     * @Author tuchg
-     */
 
     /**
      * 拼音匹配的一些缓存
@@ -94,6 +88,15 @@ public final class Pinyin {
         return resultPinyinStrBuf.toString();
     }
 
+    /**
+     * 获取多音字组合
+     *
+     * @param str      输入字符串
+     * @param caseType 大小写类型
+     * @return 多音字拼接的结果数组
+     * @Author tuchg
+     */
+
     public static List<String> toPinyin(String str, int caseType) {
         String key = str + caseType;
         if (CACHE.containsKey(key)) {
@@ -104,13 +107,10 @@ public final class Pinyin {
         }
 
         List<String[]> compose = new ArrayList<>();
-//        long start = System.currentTimeMillis();
         for (int i = 0; i < str.length(); i++) {
             compose.add(Pinyin.toPinyin(str.charAt(i), caseType));
         }
-
-//        System.out.println("多音匹配耗时:" + (System.currentTimeMillis() - start) + "ms");
-        // DFS 栈 /todo Vector 同步损耗
+        // DFS 栈  /todo Vector 同步性能损耗
         Stack<Pair<Integer, Integer>> stack = new Stack<>();
         // 路径栈
         Stack<Pair<Integer, Integer>> pathStack = new Stack<>();

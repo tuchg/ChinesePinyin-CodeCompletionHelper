@@ -64,6 +64,12 @@ Compatible with all the Intellij Platform product, indiscriminate Chinese progra
 - [x] 支持多音字补全
 - [ ] 支持非拼音输入补全，如五笔等
 
+## 已知问题
+- [ ] 补全项排序问题
+- [ ] 各部分算法有优化空间
+- [ ] 补全时部分提示信息丢失,如变量数据类型等
+
+
 ![Python 演示](screenshots/py.GIF)
 
 
