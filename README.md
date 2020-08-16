@@ -27,6 +27,7 @@ Compatible with all the Intellij Platform product, indiscriminate Chinese progra
 
 
 <h3>中文</h3>
+
 > 初衷在于，一些业务上不太适合用英语表达的，可以用上直白的母语而非拼音，然后像平常写代码那样去调用母语所表达的东西，解决部分命名困难症🤔
 
 让你的 IDE 支持中文编程，享受和英文环境一致的中文智能编码体验
@@ -34,7 +35,7 @@ Compatible with all the Intellij Platform product, indiscriminate Chinese progra
 * 拼音输入补全，如上下文存在 中文 标识符, 输入zw，则会补全提示中文【**Z**hong**W**en】
 * 多音字无差别补全
 * 函数名，变量名，类名 ．．．等标识符，只要能用中文标识的通通都支持
-* 支持全拼，五笔等各式输入方法（未来某版本发布✅）
+* 支持双拼，五笔等各式输入方法（未来某版本发布✅）
 
 兼容JB 全家桶，无差别中文编程，无论是 Java,JavaScript,Golang,Python,C#,Kotlin,C 艹 亦或者 Haskell 等等通通都支持....
 
@@ -52,7 +53,7 @@ Compatible with all the Intellij Platform product, indiscriminate Chinese progra
 
 - IDE 内建插件市场:
   
-  <kbd>Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>Marketplace</kbd> > <kbd>搜索 "ChinesePinyin-CodeCompletionHelper"</kbd> >
+  <kbd>Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>Marketplace</kbd> > <kbd>搜索 "pinyin"</kbd> >
   <kbd>Install Plugin</kbd>
   
 - 手动:
@@ -62,7 +63,7 @@ Compatible with all the Intellij Platform product, indiscriminate Chinese progra
 
 ## ToDo list
 - [x] 支持多音字补全
-- [ ] 支持非拼音输入补全，如五笔等
+- [ ] 支持非拼音输入补全，如五笔,双拼等
 
 ## 已知问题
 - [ ] 补全项排序问题
