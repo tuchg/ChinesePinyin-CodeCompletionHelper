@@ -67,7 +67,7 @@ Compatible with all the Intellij Platform product, indiscriminate Chinese progra
 
 ## 已知问题
 - [ ] 补全项排序问题
-- [ ] 各部分算法有优化空间
+- [ ] 各部分算法优化
 - [ ] 补全时部分提示信息丢失,如变量数据类型等
 
 
