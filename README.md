@@ -64,6 +64,7 @@ Compatible with all the Intellij Platform product, indiscriminate Chinese progra
 ## ToDo list
 - [x] 支持多音字补全
 - [ ] 支持非拼音输入补全，如五笔,双拼等
+- [ ] 支持 Rider 平台
 
 ## 已知问题
 - [ ] 补全项排序问题
