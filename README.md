@@ -12,7 +12,7 @@
 
 <h3>English</h3>
 <details>
-  <summary>...</summary>
+  <summary></summary>
 > The original intention is that for some businesses that are not suitable for expression in English, you can use a straightforward native language instead of pinyin, and then call what is expressed in your native language as you usually write code to solve some naming difficulties 🤔
 
 Let your IDE support Chinese programming, and enjoy the Chinese intelligent coding experience consistent with the English environment
