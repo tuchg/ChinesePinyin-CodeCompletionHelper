@@ -6,7 +6,7 @@
 
 ![Java演示](screenshots/java.GIF)
 
-*仅为编码表达提供更多选择,不鼓吹中文编程,不提倡生搬硬套英语语境*
+*为编码表达提供更多选择,不鼓吹中文编程*
 
 <!-- Plugin description -->
 
@@ -24,7 +24,7 @@ Let your IDE support Chinese programming, and enjoy the Chinese intelligent codi
 
 Compatible with all the Intellij Platform product, indiscriminate Chinese programming, Java, Kotlin, JavaScript, C#，Golang, or Haskell all support...
 
-> 为啥这里会有一段不符合插件受众的别扭英文介绍💬  <a href="https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper/issues/5">issues-5</a>
+> 为啥这里会有一段不符合插件受众的别扭英文介绍💬  <a href="https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper/issues/5">#issues-5</a>
 
 <h3>中文</h3>
 
@@ -62,22 +62,23 @@ Compatible with all the Intellij Platform product, indiscriminate Chinese progra
   
 - 手动:
 
-  展开 [latest release](https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper/releases/latest) 中的 `Assets` , 找到其下`.jar`文件并下载，而后进入 IDE 
+  展开 [latest release](https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper/releases/latest) 中的 `Assets` , 找到其下`*.jar`文件并下载，而后进入 IDE 
   <kbd>Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> > <kbd>Install plugin from disk...</kbd>
 
 ## ToDo list
 - [x] 支持多音字补全
 - [ ] 支持非拼音输入补全，如五笔,双拼等
-- [ ] 支持 Rider 平台 #[issues-4](https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper/issues/4)
+- [ ] 支持 Rider 平台 [#issues-4](https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper/issues/4)
 
 ## 已知问题
 - [ ] 补全项排序问题
 - [ ] 各部分算法优化
-- [ ] 补全时部分提示信息丢失,如变量数据类型等
+- [ ] 补全时部分提示信息丢失,如变量数据类型,包位置等
 
 ## 贡献
 
-欢迎有兴趣的同学提交 PR 🤝
+欢迎感兴趣的同学提交 PR 参与维护
+[emoji commit参考](https://gitmoji.carloscuesta.me/)
 
 ![Python 演示](screenshots/py.GIF)
 
