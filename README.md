@@ -6,13 +6,14 @@
 
 ![Java演示](screenshots/java.GIF)
 
+*仅为编码表达提供更多选择,不鼓吹中文编程,不提倡生搬硬套英语语境*
+
 <!-- Plugin description -->
 
 <a href="https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper">Github</a> | <a href="https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper/issues">Issues</a>  
 
 <h3>English</h3>
-<details>
-  <summary></summary>
+
 > The original intention is that for some businesses that are not suitable for expression in English, you can use a straightforward native language instead of pinyin, and then call what is expressed in your native language as you usually write code to solve some naming difficulties 🤔
 
 Let your IDE support Chinese programming, and enjoy the Chinese intelligent coding experience consistent with the English environment
@@ -24,11 +25,6 @@ Let your IDE support Chinese programming, and enjoy the Chinese intelligent codi
 Compatible with all the Intellij Platform product, indiscriminate Chinese programming, Java, Kotlin, JavaScript, C#，Golang, or Haskell all support...
 
 > 为啥这里会有一段不符合插件受众的别扭英文介绍💬  <a href="https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper/issues/5">issues-5</a>
-</details>
-
-
-
-
 
 <h3>中文</h3>
 
@@ -49,6 +45,9 @@ Compatible with all the Intellij Platform product, indiscriminate Chinese progra
 
 如果对您有所帮助，别忘了给本项目<a href="https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper">Github</a>主页一颗Star😁
 
+<h4>其他平台类似支持</h4>
+
+* <a href="https://gitee.com/Program-in-Chinese/vscode_Chinese_Input_Assistant">中文代码快速补全 VS Code 插件</a>
 
 <!-- Plugin description end -->
 
@@ -76,6 +75,9 @@ Compatible with all the Intellij Platform product, indiscriminate Chinese progra
 - [ ] 各部分算法优化
 - [ ] 补全时部分提示信息丢失,如变量数据类型等
 
+## 贡献
+
+欢迎有兴趣的同学提交 PR 🤝
 
 ![Python 演示](screenshots/py.GIF)
 
