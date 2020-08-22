@@ -6,6 +6,7 @@
 
 ![Java演示](screenshots/java.GIF)
 
+> 为啥这里会有一段不符合插件受众的别扭英文介绍💬 [issue-5](https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper/issues/5)
 
 <!-- Plugin description -->
 
@@ -44,6 +45,7 @@ Compatible with all the Intellij Platform product, indiscriminate Chinese progra
 提示：当提示 `no ascii`时，可按提示电灯泡关闭该提示
 
 如果对您有所帮助，别忘了给本项目<a href="https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper">Github</a>主页一颗Star😁
+
 
 <!-- Plugin description end -->
 
