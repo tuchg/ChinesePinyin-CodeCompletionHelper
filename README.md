@@ -6,15 +6,13 @@
 
 ![Java演示](screenshots/java.GIF)
 
-> 为啥这里会有一段不符合插件受众的别扭英文介绍💬 [issue-5](https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper/issues/5)
-
 <!-- Plugin description -->
 
 <a href="https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper">Github</a> | <a href="https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper/issues">Issues</a>  
 
-
 <h3>English</h3>
-
+<details>
+  <summary>...</summary>
 > The original intention is that for some businesses that are not suitable for expression in English, you can use a straightforward native language instead of pinyin, and then call what is expressed in your native language as you usually write code to solve some naming difficulties 🤔
 
 Let your IDE support Chinese programming, and enjoy the Chinese intelligent coding experience consistent with the English environment
@@ -24,6 +22,11 @@ Let your IDE support Chinese programming, and enjoy the Chinese intelligent codi
 * Support all identifiers, including variable names, function names, and class names
 
 Compatible with all the Intellij Platform product, indiscriminate Chinese programming, Java, Kotlin, JavaScript, C#，Golang, or Haskell all support...
+
+> 为啥这里会有一段不符合插件受众的别扭英文介绍💬  <a href="https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper/issues/5">issues-5</a>
+</details>
+
+
 
 
 
