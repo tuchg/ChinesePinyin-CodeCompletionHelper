@@ -6,7 +6,7 @@
 
 ![Java演示](screenshots/java.GIF)
 
-*为编码表达提供更多选择,不鼓吹中文编程*
+*仅为编码表达提供更多选择,不鼓吹中文编程*
 
 <!-- Plugin description -->
 
