@@ -6,8 +6,6 @@
 
 ![Java演示](screenshots/java.GIF)
 
-*仅为编码表达提供更多选择,不鼓吹中文编程*
-
 <!-- Plugin description -->
 
 <a href="https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper">Github</a> | <a href="https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper/issues">Issues</a>  
