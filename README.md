@@ -67,7 +67,7 @@ Compatible with all the Intellij Platform product, indiscriminate Chinese progra
 - [x] 支持多音字补全
 - [ ] 支持非拼音输入补全，如五笔,双拼等
 - [ ] 支持 Rider 平台 [#issues-4](https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper/issues/4)
-
+- [ ] [多语言编程的设想：将变量名与自然语言解耦](https://www.v2ex.com/t/701390)
 ## 已知问题
 - [ ] 补全项排序问题
 - [ ] 各部分算法优化
