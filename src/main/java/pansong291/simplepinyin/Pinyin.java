@@ -1,10 +1,6 @@
 package pansong291.simplepinyin;
 
 
-import com.intellij.openapi.util.Pair;
-
-import java.util.*;
-
 /**
  * @author pansong291
  * @author tuchg
@@ -26,10 +22,6 @@ public final class Pinyin {
      */
     public static final int LOW_CASE = 1;
 
-    /**
-     * 拼音匹配的一些缓存
-     */
-    private static final HashMap<String, List<String>> CACHE = new HashMap<>();
 
     private Pinyin() {
     }
@@ -89,86 +81,6 @@ public final class Pinyin {
     }
 
     /**
-     * 获取多音字组合
-     *
-     * @param str      输入字符串
-     * @param caseType 大小写类型
-     * @return 多音字拼接的结果数组
-     * @Author tuchg
-     */
-
-    public static List<String> toPinyin(String str, int caseType) {
-        String key = str + caseType;
-        if (CACHE.containsKey(key)) {
-            return CACHE.get(key);
-        }
-        if (str == null || str.length() == 0) {
-            return null;
-        }
-
-        List<String[]> compose = new ArrayList<>();
-        for (int i = 0; i < str.length(); i++) {
-            compose.add(Pinyin.toPinyin(str.charAt(i), caseType));
-        }
-        // DFS 栈  /todo Vector 同步性能损耗
-        Stack<Pair<Integer, Integer>> stack = new Stack<>();
-        // 路径栈
-        Stack<Pair<Integer, Integer>> pathStack = new Stack<>();
-        //返回的所有路径栈
-        List<String> pathList = new LinkedList<>();
-
-
-        for (int m = 0; m < compose.get(0).length; m++) {
-            Pair<Integer, Integer> root = Pair.create(0, m);
-            // 存入根节点
-            stack.push(root);
-            pathStack.push(root);
-            while (!stack.isEmpty()) {
-                int size = stack.size();
-                for (int i = 0; i < size; i++) {
-                    Pair<Integer, Integer> cur = stack.pop();
-                    int index = cur.first + 1;
-
-                    // 树边界
-                    if (index >= compose.size()) {
-                        pathStack.push(Pair.create(cur.first, cur.second));
-                        StringBuilder sb = new StringBuilder();
-                        // 读取当前路径，构建相应字符串
-                        pathStack.stream().skip(1).forEach(curPair -> {
-                            sb.append(compose.get(curPair.first)[curPair.second]);
-                        });
-                        pathList.add(sb.toString());
-                        pathStack.pop();
-                        continue;
-                    }
-
-
-                    if (pathStack.size() >= str.length()) {
-                        // 暴力纠正
-                        pathStack.insertElementAt(cur, index);
-                        pathStack.removeElementAt(index + 1);
-                    } else {
-                        pathStack.push(cur);
-                    }
-
-
-                    int len = compose.get(index).length;
-                    for (int j = 0; j < len; j++) {
-                        stack.push(Pair.create(index, j));
-                    }
-                }
-            }
-            pathStack.clear();
-            stack.clear();
-        }
-
-
-        CACHE.put(key, pathList);
-        return pathList;
-    }
-
-
-    /**
      * 若输入字符是中文则转为拼音，若不是则返回该字符，支持多音字
      *
      * @param c 输入字符
@@ -226,23 +138,21 @@ public final class Pinyin {
      * @return 拼音字符串数组
      */
     public static String[] getPinyin(char c, int caseType) {
-        String result[] = null;
+        String[] result = null;
 
         int charIndex = getPinyinCode(c);
         if (charIndex < 0) {
-            return result;
+            return null;
         } else if (charIndex == 0) {
             result = new String[]{PinyinData.PINYIN_12295};
         } else {
-            String duoyin[] = getDuoyin(c);
+            String[] duoyin = getDuoyin(c);
             if (duoyin == null) {
                 result = new String[]{PinyinData.PINYIN_TABLE[charIndex]};
             } else {
                 result = new String[duoyin.length + 1];
                 result[0] = PinyinData.PINYIN_TABLE[charIndex];
-                for (int i = 0; i < duoyin.length; i++) {
-                    result[i + 1] = duoyin[i];
-                }
+                System.arraycopy(duoyin, 0, result, 1, duoyin.length);
             }
         }
 

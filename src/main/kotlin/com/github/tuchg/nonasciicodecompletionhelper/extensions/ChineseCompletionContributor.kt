@@ -1,7 +1,8 @@
 package com.github.tuchg.nonasciicodecompletionhelper.extensions
 
-import com.github.tuchg.nonasciicodecompletionhelper.extensions.ChineseCompletionContributor.Companion.cache
 import com.github.tuchg.nonasciicodecompletionhelper.model.ChineseLookupElement
+import com.github.tuchg.nonasciicodecompletionhelper.utils.countContainsSomeChar
+import com.github.tuchg.nonasciicodecompletionhelper.utils.toPinyin
 import com.intellij.codeInsight.completion.CompletionContributor
 import com.intellij.codeInsight.completion.CompletionParameters
 import com.intellij.codeInsight.completion.CompletionResultSet
@@ -16,12 +17,6 @@ import pansong291.simplepinyin.Pinyin
 class ChineseCompletionContributor : CompletionContributor() {
 //    private val maxValue = Int.MAX_VALUE - 200 //用于补全项排序
 
-    companion object {
-        @JvmStatic
-        val cache = HashMap<String, Int>()
-
-    }
-
     override fun fillCompletionVariants(parameters: CompletionParameters, result: CompletionResultSet) {
         val resultSet = result
                 .withPrefixMatcher(ChinesePrefixMatcher(result.prefixMatcher.prefix))
@@ -30,14 +25,17 @@ class ChineseCompletionContributor : CompletionContributor() {
 //                            override fun weigh(element: LookupElement) = if (element is ChineseLookupElement) element.index else Int.MAX_VALUE
 //                        }
 //                ))
+
         resultSet.restartCompletionOnAnyPrefixChange()
         resultSet.addLookupAdvertisement("输入拼音,补全中文标识符")
+
+        // 先跳过当前 Contributors 获取包装后的 lookupElement而后进行修改装饰
         resultSet.runRemainingContributors(parameters) { r ->
             val element = r.lookupElement
             if (Pinyin.hasChinese(element.lookupString)) {
                 var flag = 0
                 // 从多音字列表提取命中次数最多的一个
-                val closest = Pinyin.toPinyin(element.lookupString, Pinyin.FIRST_UP_CASE)?.let {
+                val closest = toPinyin(element.lookupString, Pinyin.FIRST_UP_CASE).let {
                     val prefix = r.prefixMatcher.prefix
                     if (it.size == 1) {
                         return@let if (countContainsSomeChar(it[0].toLowerCase(), prefix) >= prefix.length) {
@@ -45,7 +43,7 @@ class ChineseCompletionContributor : CompletionContributor() {
                             it[0]
                         } else null
                     }
-                    it.maxBy {
+                    it.maxByOrNull {
                         val count = countContainsSomeChar(it.toLowerCase(), prefix)
                         if (count >= prefix.length) {
                             flag++
@@ -62,6 +60,7 @@ class ChineseCompletionContributor : CompletionContributor() {
             } else
                 resultSet.passResult(r)
         }
+
     }
 }
 
@@ -69,7 +68,7 @@ class ChinesePrefixMatcher(prefix: String) : PlainPrefixMatcher(prefix) {
 
     override fun prefixMatches(name: String): Boolean {
         return if (Pinyin.hasChinese(name)) {
-            for (s in Pinyin.toPinyin(name, Pinyin.LOW_CASE)) {
+            for (s in toPinyin(name, Pinyin.LOW_CASE)) {
                 if (countContainsSomeChar(s, prefix) >= prefix.length) {
                     return true
                 }
@@ -79,33 +78,4 @@ class ChinesePrefixMatcher(prefix: String) : PlainPrefixMatcher(prefix) {
     }
 
     override fun cloneWithPrefix(prefix: String) = if (prefix == this.prefix) this else ChinesePrefixMatcher(prefix)
-}
-
-
-/**
- * 计算字符串内包含需要的字符的数量
- * @param origin 文本串
- * @param needed 模式串
- */
-private fun countContainsSomeChar(origin: String, needed: String): Int {
-    val key = "$origin-$needed"
-    cache[key]?.let {
-        return it
-    }
-    val counted = mutableSetOf<Int>()
-    var i = 0
-    var j = 0
-    while (i < needed.length) {
-        val indexOf = origin.indexOf(needed[i], j++)
-        if (indexOf != -1) {
-            if (counted.add(indexOf)) {
-                i++
-            }
-        } else {
-            i++
-        }
-    }
-    val size = counted.size
-    cache[key] = size
-    return size
 }
