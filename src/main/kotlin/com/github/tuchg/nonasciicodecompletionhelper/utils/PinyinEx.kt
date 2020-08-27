@@ -14,7 +14,7 @@ class PinyinEx {
 
 
 /**
- * 获取多音字组合
+ * 获取多音字组合 (笛卡尔积)
  *
  * @param str      输入字符串
  * @param caseType 大小写类型
@@ -27,9 +27,7 @@ fun toPinyin(str: String, caseType: Int): Array<String> {
             .reduce { acc, strings ->
                 acc.flatMap { a ->
                     strings.map { b -> a + b }
-                }.toArray { size ->
-                    arrayOfNulls<String>(size)
-                }
+                }.toTypedArray()
             }
 }
 

@@ -54,7 +54,7 @@ class ChineseCompletionContributor : CompletionContributor() {
                 closest?.let {
                     if (flag > 0) {
                         // 追加补全列表
-                        resultSet.addElement(ChineseLookupElement(-1, element.lookupString, it).copyOtherLookup(r.lookupElement))
+                        resultSet.addElement(ChineseLookupElement(-1, element.lookupString, it).copyFrom(r.lookupElement))
                     }
                 }
             } else

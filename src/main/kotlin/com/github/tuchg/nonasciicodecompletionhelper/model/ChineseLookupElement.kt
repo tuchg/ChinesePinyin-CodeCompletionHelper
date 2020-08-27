@@ -1,7 +1,6 @@
 package com.github.tuchg.nonasciicodecompletionhelper.model
 
 import com.intellij.codeInsight.completion.InsertionContext
-import com.intellij.codeInsight.lookup.DefaultLookupItemRenderer
 import com.intellij.codeInsight.lookup.LookupElement
 import com.intellij.codeInsight.lookup.LookupElementPresentation
 
@@ -29,13 +28,10 @@ class ChineseLookupElement(
     }
 
     override fun renderElement(presentation: LookupElementPresentation) {
+        // 复制原元素类型,包位置,icon等信息
+        lookupElement?.renderElement(presentation)
         // 文本【WenBen】
         presentation.itemText = "${this.original}【${this.pinyin}】"
-
-        lookupElement?.let {
-            // 版本向下兼容问题
-            presentation.icon = DefaultLookupItemRenderer.getRawIcon(lookupElement, true)
-        }
     }
 
     /**
@@ -54,7 +50,7 @@ class ChineseLookupElement(
     /**
      * 用于复制一些特殊信息
      */
-    fun copyOtherLookup(lookupElement: LookupElement): ChineseLookupElement {
+    fun copyFrom(lookupElement: LookupElement): ChineseLookupElement {
         this.lookupElement = lookupElement
         return this
     }

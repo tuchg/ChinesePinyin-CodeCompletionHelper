@@ -72,7 +72,7 @@ Compatible with all the Intellij Platform product, indiscriminate Chinese progra
 - [ ] 中文包中文类下其他包补全消失问题
 - [ ] 补全项排序问题
 - [x] 各部分算法优化
-- [ ] 补全时部分提示信息丢失,如变量数据类型,包位置等
+- [x] 补全时部分提示信息丢失,如变量数据类型,包位置等
 
 ## 贡献
 
