@@ -15,15 +15,13 @@ class ChineseCompletionContributor : CompletionContributor() {
     override fun fillCompletionVariants(parameters: CompletionParameters, result: CompletionResultSet) {
         val resultSet = result
                 .withPrefixMatcher(ChinesePrefixMatcher(result.prefixMatcher.prefix))
-//                .withRelevanceSorter(CompletionSorter.defaultSorter(parameters, result.prefixMatcher).weigh(
-//                        object : LookupElementWeigher("ChineseCompletionElementWeigher", false, true) {
-//                            override fun weigh(element: LookupElement) = if (element is ChineseLookupElement) element.index else Int.MAX_VALUE
-//                        }
-//                ))
+                .withRelevanceSorter(CompletionSorter.emptySorter())
 
-        resultSet.restartCompletionOnAnyPrefixChange()
-        resultSet.addLookupAdvertisement("输入拼音,补全中文标识符")
-
+        resultSet.addLookupAdvertisement("输入拼音,补全中文标识符;若无满意结果,请再次激活补全快捷键或给出更精确的输入")
+        /**
+         * todo 可暴力解决 bug 但性能影响较大
+         * parameters.withInvocationCount(2)
+         */
         // 先跳过当前 Contributors 获取包装后的 lookupElement而后进行修改装饰
         resultSet.runRemainingContributors(parameters, { r ->
             val element = r.lookupElement
