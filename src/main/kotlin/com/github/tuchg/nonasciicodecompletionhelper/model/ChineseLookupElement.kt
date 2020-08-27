@@ -21,12 +21,15 @@ class ChineseLookupElement(
     private var lookupElement: LookupElement? = null
 
     /**
-     * 据此搜索
+     * 据此进行文本匹配
      */
     override fun getLookupString(): String {
         return original!!
     }
 
+    /**
+     * 控制该项在补全列表最终显示效果
+     */
     override fun renderElement(presentation: LookupElementPresentation) {
         // 复制原元素类型,包位置,icon等信息
         lookupElement?.renderElement(presentation)
@@ -35,7 +38,7 @@ class ChineseLookupElement(
     }
 
     /**
-     * 借助原元素的编辑器文本插入能力, 如补全方法调用
+     * 借助原元素的编辑器文本插入能力, 如补全方法()调用等
      */
     override fun handleInsert(context: InsertionContext) {
         this.lookupElement?.let {
