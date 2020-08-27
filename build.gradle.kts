@@ -39,6 +39,7 @@ repositories {
 }
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
+    implementation(kotlin("reflect"))
 //    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.10.0")
 }
 
@@ -57,10 +58,6 @@ intellij {
 //    setPlugins("java")
 }
 
-dependencies {
-//    implementation("com.github.promeg:tinypinyin:2.0.3")
-//    implementation(files("lib/SimplePinyin.jar"))
-}
 
 // Configure detekt plugin.
 // Read more: https://detekt.github.io/detekt/kotlindsl.html
