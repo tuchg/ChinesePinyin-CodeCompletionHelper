@@ -19,8 +19,7 @@ class CompletionTests : CompletionAutoPopupTestCase() {
     }
 
     fun `test @补全功能性测试`() {
-        //todo
-        myFixture.testCompletionVariants("", "han")
+        //myFixture.testCompletionVariants("", "han")
     }
 
     fun `test @补全核心正确性性测试`() {
