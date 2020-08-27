@@ -3,19 +3,14 @@ package com.github.tuchg.nonasciicodecompletionhelper.extensions
 import com.github.tuchg.nonasciicodecompletionhelper.model.ChineseLookupElement
 import com.github.tuchg.nonasciicodecompletionhelper.utils.countContainsSomeChar
 import com.github.tuchg.nonasciicodecompletionhelper.utils.toPinyin
-import com.intellij.codeInsight.completion.CompletionContributor
-import com.intellij.codeInsight.completion.CompletionParameters
-import com.intellij.codeInsight.completion.CompletionResultSet
-import com.intellij.codeInsight.completion.PlainPrefixMatcher
+import com.intellij.codeInsight.completion.*
 import pansong291.simplepinyin.Pinyin
 
-// private val cache = HashMap<String, Boolean>()
 /**
  * @author tuchg
  * @date 2020-8-1
  */
 class ChineseCompletionContributor : CompletionContributor() {
-//    private val maxValue = Int.MAX_VALUE - 200 //用于补全项排序
 
     override fun fillCompletionVariants(parameters: CompletionParameters, result: CompletionResultSet) {
         val resultSet = result
@@ -30,7 +25,7 @@ class ChineseCompletionContributor : CompletionContributor() {
         resultSet.addLookupAdvertisement("输入拼音,补全中文标识符")
 
         // 先跳过当前 Contributors 获取包装后的 lookupElement而后进行修改装饰
-        resultSet.runRemainingContributors(parameters) { r ->
+        resultSet.runRemainingContributors(parameters, { r ->
             val element = r.lookupElement
             if (Pinyin.hasChinese(element.lookupString)) {
                 var flag = 0
@@ -39,12 +34,12 @@ class ChineseCompletionContributor : CompletionContributor() {
                     val prefix = r.prefixMatcher.prefix
                     if (it.size == 1) {
                         return@let if (countContainsSomeChar(it[0].toLowerCase(), prefix) >= prefix.length) {
-                            flag += 10
+                            flag += 100
                             it[0]
                         } else null
                     }
-                    it.maxByOrNull {
-                        val count = countContainsSomeChar(it.toLowerCase(), prefix)
+                    it.maxByOrNull { str ->
+                        val count = countContainsSomeChar(str.toLowerCase(), prefix)
                         if (count >= prefix.length) {
                             flag++
                             count
@@ -54,13 +49,13 @@ class ChineseCompletionContributor : CompletionContributor() {
                 closest?.let {
                     if (flag > 0) {
                         // 追加补全列表
-                        resultSet.addElement(ChineseLookupElement(-1, element.lookupString, it).copyFrom(r.lookupElement))
+                        resultSet.addElement(ChineseLookupElement(flag, element.lookupString, it).copyFrom(r.lookupElement))
                     }
                 }
             } else
                 resultSet.passResult(r)
-        }
-
+        }, true)
+        resultSet.restartCompletionOnAnyPrefixChange()
     }
 }
 
