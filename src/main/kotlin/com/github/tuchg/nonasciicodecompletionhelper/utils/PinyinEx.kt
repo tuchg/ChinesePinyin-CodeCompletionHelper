@@ -5,9 +5,15 @@ import pansong291.simplepinyin.Pinyin
 
 class PinyinEx {
     companion object {
+        /**
+         * 字符计数缓存
+         */
         @JvmStatic
         val COUNT_CHAR_CACHE: MutableMap<String, Int> = ContainerUtil.createSoftValueMap()
 
+        /**
+         * 笛卡尔积缓存
+         */
         @JvmStatic
         val CARTESIAN_CACHE: MutableMap<String, Array<String>> = ContainerUtil.createSoftValueMap()
     }
