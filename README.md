@@ -71,9 +71,10 @@ Compatible with all the Intellij Platform product, indiscriminate Chinese progra
 - [ ] [多语言编程的设想：将变量名与自然语言解耦](https://www.v2ex.com/t/701390)
 
 ## 已知问题
+- [ ] 中英文混合问题 [#issues-6](https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper/issues/6)
 - [ ] 中文包下中文类,补全其他包内容时未能自动出现问题 *双击补全键解决或给出更精确的输入*
-- [ ] 中文包下中文类,调用本类名相关补全时当前类重复出现一次的问题
-- [ ] 补全项排序问题
+- [x] 中文包下中文类,调用本类名相关补全时当前类重复出现一次的问题
+- [ ] 补全项排序问题 ☑︎已第一次优化
 - [x] 各部分算法优化
 - [x] 补全时部分提示信息丢失,如变量数据类型,包位置等
 
