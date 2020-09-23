@@ -1,6 +1,10 @@
 <!-- Keep a Changelog guide -> https://keepachangelog.com -->
 
 # Changelog
+## [0.0.5] - 2020-09-23
+### Fixed
+- 大写英文带中文补全问题
+
 
 ## [0.0.4] - 2020-08-27
 ### Fixed
