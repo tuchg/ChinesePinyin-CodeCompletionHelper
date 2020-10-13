@@ -6,9 +6,11 @@
     <!-- https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html -->
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.modules.lang</depends>
-    
+
     <extensions defaultExtensionNs="com.intellij">
         <completion.contributor language="any"
                                 implementationClass="com.github.tuchg.nonasciicodecompletionhelper.extensions.ChineseCompletionContributor"/>
+        <!--<findInProjectSearchEngine
+                implementation="com.github.tuchg.nonasciicodecompletionhelper.extensions.ChineseCompletionSearchEngine"/>-->
     </extensions>
 </idea-plugin>
