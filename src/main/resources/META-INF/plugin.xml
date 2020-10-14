@@ -10,7 +10,5 @@
     <extensions defaultExtensionNs="com.intellij">
         <completion.contributor language="any"
                                 implementationClass="com.github.tuchg.nonasciicodecompletionhelper.extensions.ChineseCompletionContributor"/>
-        <!--<findInProjectSearchEngine
-                implementation="com.github.tuchg.nonasciicodecompletionhelper.extensions.ChineseCompletionSearchEngine"/>-->
     </extensions>
 </idea-plugin>
