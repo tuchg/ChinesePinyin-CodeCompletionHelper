@@ -13,10 +13,10 @@ import pansong291.simplepinyin.Pinyin
 class ChineseCompletionContributor : CompletionContributor() {
 
     override fun fillCompletionVariants(parameters: CompletionParameters, result: CompletionResultSet) {
+        val prefix = result.prefixMatcher.prefix
         val resultSet = result
-                .withPrefixMatcher(ChinesePrefixMatcher(result.prefixMatcher.prefix.toLowerCase()))
-                .withRelevanceSorter(CompletionSorter.emptySorter())
-
+                .withPrefixMatcher(ChinesePrefixMatcher(prefix.toLowerCase()))
+//                .withRelevanceSorter(CompletionSorter.emptySorter())
         resultSet.addLookupAdvertisement("输入拼音,补全中文标识符;若无满意结果,请再次激活补全快捷键或给出更精确的输入")
         /**
          * todo 可暴力解决 bug:[需二次激活获取补全] 但性能影响较大
@@ -26,28 +26,32 @@ class ChineseCompletionContributor : CompletionContributor() {
         resultSet.runRemainingContributors(parameters, { r ->
             val element = r.lookupElement
             if (Pinyin.hasChinese(element.lookupString)) {
-                var flag = 0
+                var flag = false
                 // 从多音字列表提取命中次数最多的一个
                 val closest = toPinyin(element.lookupString, Pinyin.FIRST_UP_CASE).let {
-                    val prefix = r.prefixMatcher.prefix
                     if (it.size == 1) {
                         return@let if (countContainsSomeChar(it[0].toLowerCase(), prefix) >= prefix.length) {
-                            flag += 100
+                            flag = true
                             it[0]
                         } else null
                     }
                     it.maxByOrNull { str ->
                         val count = countContainsSomeChar(str.toLowerCase(), prefix)
                         if (count >= prefix.length) {
-                            flag++
+                            flag = true
                             count
                         } else -1
                     }
                 }
                 closest?.let {
-                    if (flag > 0) {
+                    // 为完全匹配项提供排序最高优先级
+                    val priority = if (it.length == prefix.length) 2000.0 else 10.0
+                    if (flag) {
                         // 追加补全列表
-                        resultSet.addElement(ChineseLookupElement(flag, element.lookupString, it).copyFrom(r.lookupElement))
+                        val chineseLookupElement =
+                                ChineseLookupElement(0, element.lookupString, it)
+                                        .copyFrom(r.lookupElement)
+                        resultSet.addElement(PrioritizedLookupElement.withPriority(chineseLookupElement, priority))
                     }
                 }
             } else
