@@ -13,11 +13,12 @@ import pansong291.simplepinyin.Pinyin
 class ChineseCompletionContributor : CompletionContributor() {
 
     override fun fillCompletionVariants(parameters: CompletionParameters, result: CompletionResultSet) {
-        val prefix = result.prefixMatcher.prefix
+        val prefix = result.prefixMatcher.prefix.toLowerCase()
         val resultSet = result
-                .withPrefixMatcher(ChinesePrefixMatcher(prefix.toLowerCase()))
+                .withPrefixMatcher(ChinesePrefixMatcher(prefix))
 //                .withRelevanceSorter(CompletionSorter.emptySorter())
         resultSet.addLookupAdvertisement("输入拼音,补全中文标识符;若无满意结果,请再次激活补全快捷键或给出更精确的输入")
+
         /**
          * todo 可暴力解决 bug:[需二次激活获取补全] 但性能影响较大
          * parameters.withInvocationCount(2)
