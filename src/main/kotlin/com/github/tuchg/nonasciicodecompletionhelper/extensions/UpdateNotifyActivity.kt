@@ -22,7 +22,6 @@ import com.intellij.openapi.startup.StartupActivity
 class UpdateNotifyActivity : StartupActivity {
 
     override fun runActivity(project: Project) {
-        showUpdate(project)
         removeIfInstalled()
         val settings = Settings.instance
         if (getPlugin()?.version != settings.version) {
