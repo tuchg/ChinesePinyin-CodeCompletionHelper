@@ -1,4 +1,18 @@
 <!-- Keep a Changelog guide -> https://keepachangelog.com -->
+# Changelog
+## [0.1.0] 2020-11-20
+### Added
+
+- 增加插件配置，通知提醒
+- JetBrains支持
+ 
+### Fixed
+- 修复大小写混搭输入匹配问题
+- 修复#9排序问题,为完全匹配项提供最高优先级
+
+### Changed
+
+- 平台依赖升级，增加忽略kotlin打包
 
 # Changelog
 ## [0.0.5] - 2020-09-23
@@ -35,30 +49,6 @@
 
 
 ## [Unreleased]
-### Added
-
-### Changed
-
-### Deprecated
-
-### Removed
-
-### Fixed
-
-### Security
-## [0.0.5]
-### Added
-
-### Changed
-
-### Deprecated
-
-### Removed
-
-### Fixed
-
-### Security
-## [0.0.4]
 ### Added
 
 ### Changed
