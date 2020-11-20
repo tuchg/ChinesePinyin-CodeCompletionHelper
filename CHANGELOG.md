@@ -60,3 +60,15 @@
 ### Fixed
 
 ### Security
+## [0.1.0]
+### Added
+
+### Changed
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
