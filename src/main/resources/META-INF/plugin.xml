@@ -10,5 +10,8 @@
     <extensions defaultExtensionNs="com.intellij">
         <completion.contributor language="any"
                                 implementationClass="com.github.tuchg.nonasciicodecompletionhelper.extensions.ChineseCompletionContributor"/>
+        <postStartupActivity
+                implementation="com.github.tuchg.nonasciicodecompletionhelper.extensions.UpdateNotifyActivity"/>
+        <applicationService serviceImplementation="com.github.tuchg.nonasciicodecompletionhelper.config.Settings"/>
     </extensions>
 </idea-plugin>
