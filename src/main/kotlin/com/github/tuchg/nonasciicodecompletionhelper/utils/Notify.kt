@@ -19,7 +19,9 @@ fun createNotification(title: String, content: String, displayId: String,
     val group = NotificationGroup(
             displayId,
             NotificationDisplayType.STICKY_BALLOON,
-            true
+            true,
+            null,
+            null
     )
     return group.createNotification(title, content, type, listener)
 }

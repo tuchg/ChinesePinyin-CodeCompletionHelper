@@ -36,7 +36,7 @@ class UpdateNotifyActivity : StartupActivity {
         if (isInstalled) {
             val pluginDescriptor = PluginManagerCore.getPlugin(pluginId)
             if (pluginDescriptor != null) {
-                StartupActionScriptManager.addActionCommand(DeleteCommand(pluginDescriptor.pluginPath.toFile()))
+                StartupActionScriptManager.addActionCommand(DeleteCommand(pluginDescriptor.path))
             }
         }
     }
