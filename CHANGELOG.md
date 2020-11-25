@@ -1,4 +1,9 @@
 <!-- Keep a Changelog guide -> https://keepachangelog.com -->
+## [0.1.2] 2020-11-23
+### Fixed
+- 修复AndroidStudio兼容问题
+
+
 ## [0.1.1] 2020-11-20
 ### Added
 
@@ -61,53 +66,3 @@
 - 支持拼音输入补全
 - 支持多音字补全
 - Initial scaffold created from [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template)
-
-
-## [Unreleased]
-### Added
-
-### Changed
-
-### Deprecated
-
-### Removed
-
-### Fixed
-
-### Security
-## [0.1.1]
-### Added
-
-### Changed
-
-### Deprecated
-
-### Removed
-
-### Fixed
-
-### Security
-## [0.1.1]
-### Added
-
-### Changed
-
-### Deprecated
-
-### Removed
-
-### Fixed
-
-### Security
-## [0.1.0]
-### Added
-
-### Changed
-
-### Deprecated
-
-### Removed
-
-### Fixed
-
-### Security
