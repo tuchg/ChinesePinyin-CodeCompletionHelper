@@ -67,7 +67,7 @@ Compatible with all the Intellij Platform product, indiscriminate Chinese progra
 - [x] 支持多音字补全
 - [ ] 提供搜索/替换框内的拼音中文补全,平台开放API尚处试验阶段,且使用频率不高,暂且搁置 [#issues-8](https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper/issues/8)
 - [ ] 添加可视化配置界面
-- [ ] 支持非拼音输入补全，如五笔,双拼等
+- [ ] 支持非全拼输入补全，如五笔、双拼等
 - [ ] Kotlin 工作异常 [#issues-10](https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper/issues/10)
 - [ ] 支持 Rider 平台 [#issues-4](https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper/issues/4)
 - [ ] [多语言编程的设想：将变量名与自然语言解耦](https://www.v2ex.com/t/701390)
