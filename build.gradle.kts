@@ -37,9 +37,9 @@ repositories {
     jcenter()
 }
 dependencies {
-//    implementation(kotlin("stdlib-jdk8"))
-//    implementation(kotlin("reflect"))
-//    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.10.0")
+    implementation(kotlin("stdlib-jdk8"))
+    implementation(kotlin("reflect"))
+    // detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.10.0")
 }
 
 // Configure gradle-intellij-plugin plugin.

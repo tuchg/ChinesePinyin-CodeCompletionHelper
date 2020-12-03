@@ -4,7 +4,6 @@
     <vendor url="https://github.com/tuchg" email="wzcjava@gmail.com">tuchg</vendor>
     <!-- Product and plugin compatibility requirements -->
     <!-- https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html -->
-    <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.modules.lang</depends>
 
     <extensions defaultExtensionNs="com.intellij">
@@ -12,6 +11,7 @@
                                 implementationClass="com.github.tuchg.nonasciicodecompletionhelper.extensions.ChineseCompletionContributor"/>
         <postStartupActivity
                 implementation="com.github.tuchg.nonasciicodecompletionhelper.extensions.UpdateNotifyActivity"/>
-        <applicationService serviceImplementation="com.github.tuchg.nonasciicodecompletionhelper.config.Settings"/>
+        <applicationService
+                serviceImplementation="com.github.tuchg.nonasciicodecompletionhelper.config.Settings"/>
     </extensions>
 </idea-plugin>

@@ -1,4 +1,9 @@
 <!-- Keep a Changelog guide -> https://keepachangelog.com -->
+## [0.1.3] 2020-12-03
+### Fixed
+- 修复2020.3兼容问题
+
+
 ## [0.1.2] 2020-11-23
 ### Fixed
 - 修复AndroidStudio兼容问题
