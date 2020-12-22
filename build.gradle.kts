@@ -26,6 +26,8 @@ val platformDownloadSources: String by project
 val platformPlugins: String by project
 val pluginVerifierIdeVersions: String by project
 
+version = pluginVersion
+
 // Configure project's dependencies
 repositories {
     mavenCentral()
