@@ -85,15 +85,3 @@
 ### Fixed
 
 ### Security
-## [unspecified]
-### Added
-
-### Changed
-
-### Deprecated
-
-### Removed
-
-### Fixed
-
-### Security
