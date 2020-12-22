@@ -15,7 +15,7 @@ class ChineseCompletionContributor : CompletionContributor() {
     override fun fillCompletionVariants(parameters: CompletionParameters, result: CompletionResultSet) {
         val prefix = result.prefixMatcher.prefix.toLowerCase()
         val resultSet = result
-                .withPrefixMatcher(ChinesePrefixMatcher(prefix))
+            .withPrefixMatcher(ChinesePrefixMatcher(prefix))
 //                .withRelevanceSorter(CompletionSorter.emptySorter())
         resultSet.addLookupAdvertisement("输入拼音,补全中文标识符;若无满意结果,请再次激活补全快捷键或给出更精确的输入")
 
@@ -50,8 +50,8 @@ class ChineseCompletionContributor : CompletionContributor() {
                     if (flag) {
                         // 追加补全列表
                         val chineseLookupElement =
-                                ChineseLookupElement(0, element.lookupString, it)
-                                        .copyFrom(r.lookupElement)
+                            ChineseLookupElement(0, element.lookupString, it)
+                                .copyFrom(r.lookupElement)
                         resultSet.addElement(PrioritizedLookupElement.withPriority(chineseLookupElement, priority))
                     }
                 }
