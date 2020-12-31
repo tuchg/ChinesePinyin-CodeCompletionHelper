@@ -2,6 +2,22 @@
 
 # Changelog
 
+## [0.1.4] 2020-12-31
+
+### Added
+
+### Changed
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
+* 修复启动后插件丢失问题
+
+### Security
+
 ## [0.1.3] 2020-12-03
 
 ### Fixed
@@ -93,18 +109,6 @@
   from [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template)
 
 ## [Unreleased]
-### Added
-
-### Changed
-
-### Deprecated
-
-### Removed
-
-### Fixed
-
-### Security
-## [0.1.4]
 
 ### Added
 
@@ -117,3 +121,4 @@
 ### Fixed
 
 ### Security
+
