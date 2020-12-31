@@ -36,7 +36,7 @@ class ChineseCompletionContributor : CompletionContributor() {
                             it[0]
                         } else null
                     }
-                    it.maxByOrNull { str ->
+                    it.maxBy { str ->
                         val count = countContainsSomeChar(str.toLowerCase(), prefix)
                         if (count >= prefix.length) {
                             flag = true

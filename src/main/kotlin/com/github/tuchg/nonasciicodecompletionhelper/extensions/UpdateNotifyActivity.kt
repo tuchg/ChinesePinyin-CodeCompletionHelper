@@ -22,7 +22,7 @@ import com.intellij.openapi.startup.StartupActivity
 class UpdateNotifyActivity : StartupActivity {
 
     override fun runActivity(project: Project) {
-        removeIfInstalled()
+//        removeIfInstalled()
         val settings = Settings.instance
         if (getPlugin()?.version != settings.version) {
             settings.version = getPlugin()!!.version
@@ -88,11 +88,11 @@ class UpdateNotifyActivity : StartupActivity {
 
         private fun showUpdate(project: Project) {
             val notification = createNotification(
-                    updateMsg(),
-                    updateContent,
-                    pluginId,
-                    NotificationType.INFORMATION,
-                    UrlOpeningListener(false)
+                updateMsg(),
+                updateContent,
+                pluginId,
+                NotificationType.INFORMATION,
+                UrlOpeningListener(false)
             )
             showFullNotification(project, notification)
         }
