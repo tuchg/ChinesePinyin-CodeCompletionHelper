@@ -16,18 +16,18 @@
 
 让你的 IDE 支持中文编程，享受和英文环境一致的中文智能编码体验
 
-* 拼音输入补全，如上下文存在 中文 标识符, 输入zw，则会补全提示中文【**Z**hong**W**en】
+* 拼音输入补全，如上下文存在 `中文` 标识符, 输入 zw，则会补全提示中文【**Z**hong**W**en】
 * 多音字无差别补全
-* 函数名，变量名，类名 ．．．等标识符，只要能用中文标识的通通都支持
-* 支持双拼，五笔等各式输入方法（未来某版本发布✅）
+* 函数名、变量名、类名等等标识符，只要能用中文标识的通通都支持
+* 支持双拼、五笔等各式输入方法（未来某版本发布✅）
 
-兼容JB 全家桶，无差别中文编程，无论是 Java,JavaScript,Golang,Python,C#,Kotlin,C 艹 亦或者 Haskell 等等通通都支持....
+兼容 JB 全家桶，无差别中文编程，无论是 Java、JavaScript、Golang、Python、C#、C 艹 亦或者 Haskell 等等通通都支持
 
 <p></p>
 
-提示：当提示 `no ascii`时，可按提示电灯泡关闭该提示
+提示：当提示 `no ascii` 时，可按提示电灯泡关闭该提示
 
-如果对您有所帮助，别忘了给本项目<a href="https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper">Github</a>主页一颗Star😁
+如果对您有所帮助，别忘了给本项目<a href="https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper"> Github </a>主页一颗 Star😁
 
 <h4>其他平台类似支持</h4>
 
