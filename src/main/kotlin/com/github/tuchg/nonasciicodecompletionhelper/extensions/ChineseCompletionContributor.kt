@@ -58,7 +58,9 @@ class ChineseCompletionContributor : CompletionContributor() {
             } else
                 resultSet.passResult(r)
         }, true)
-        resultSet.restartCompletionOnAnyPrefixChange()
+
+        // 为 #6 暂除此行，影响待观察
+        // resultSet.restartCompletionOnAnyPrefixChange()
     }
 }
 
