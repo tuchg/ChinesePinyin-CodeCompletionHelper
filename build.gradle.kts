@@ -30,9 +30,7 @@ version = pluginVersion
 
 // Configure project's dependencies
 repositories {
-    maven {
-        setUrl("https://maven.aliyun.com/repository/public/")
-    }
+    maven { setUrl("https://maven.aliyun.com/repository/public/") }
     mavenLocal()
     mavenCentral()
     jcenter()
