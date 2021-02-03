@@ -1,0 +1,23 @@
+<idea-plugin>
+    <id>com.github.tuchg.nonasciicodecompletionhelper</id>
+    <name>ChinesePinyin-CodeCompletionHelper</name>
+    <vendor url="https://github.com/tuchg" email="wzcjava@gmail.com">tuchg</vendor>
+    <!-- Product and plugin compatibility requirements -->
+    <!-- https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.lang</depends>
+    <!--各平台依赖-->
+    <depends optional="true" config-file="platforms/kotlin.xml">org.jetbrains.kotlin</depends>
+    <depends optional="true" config-file="platforms/clion.xml">com.intellij.modules.clion</depends>
+    <depends optional="true" config-file="platforms/rider.xml">com.intellij.modules.rider</depends>
+
+
+    <extensions defaultExtensionNs="com.intellij">
+        <completion.contributor language="any"
+                                implementationClass="com.github.tuchg.nonasciicodecompletionhelper.extensions.ChineseCompletionContributor"/>
+        <postStartupActivity
+                implementation="com.github.tuchg.nonasciicodecompletionhelper.extensions.UpdateNotifyActivity"/>
+        <applicationService
+                serviceImplementation="com.github.tuchg.nonasciicodecompletionhelper.config.Settings"/>
+    </extensions>
+</idea-plugin>
