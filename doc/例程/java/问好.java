@@ -9,10 +9,11 @@ public class 问好 {
     }
 
     private static String get姓名() {
-        return "小白"
+        d
+        return "小白";
     }
 
     private static String get问候() {
-        return "吃了么"
+        return "吃了么";
     }
 }
