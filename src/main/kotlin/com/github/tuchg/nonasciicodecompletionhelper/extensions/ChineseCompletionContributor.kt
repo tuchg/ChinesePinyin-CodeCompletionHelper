@@ -62,8 +62,8 @@ open class ChineseCompletionContributor() : CompletionContributor() {
             } else
                 resultSet.passResult(r)
         }
-        // 为 #6 暂除此行，影响待观察
-        // resultSet.restartCompletionOnAnyPrefixChange()
+        // 修复 输入单个字符本贡献器无响应
+        resultSet.restartCompletionWhenNothingMatches()
     }
 
     open val renderElementHandle: (element: LookupElement, pinyin: String, priority: Double, rs: CompletionResultSet) -> Unit =
