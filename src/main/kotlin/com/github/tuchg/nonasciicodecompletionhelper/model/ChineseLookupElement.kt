@@ -3,6 +3,7 @@ package com.github.tuchg.nonasciicodecompletionhelper.model
 import com.intellij.codeInsight.completion.InsertionContext
 import com.intellij.codeInsight.lookup.LookupElement
 import com.intellij.codeInsight.lookup.LookupElementPresentation
+import javax.swing.Icon
 
 /**
  * @author: tuchg
@@ -10,12 +11,11 @@ import com.intellij.codeInsight.lookup.LookupElementPresentation
  * @description:
  */
 class ChineseLookupElement(
-        // 据此排序
-        val index: Int,
-        // 原文本
-        private val original: String?,
-        // 取拼音后的文本
-        private val pinyin: String?
+    // 原文本
+    private val original: String?,
+    // 取拼音后的文本
+    private val pinyin: String?,
+    private val icon: Icon? = null
 ) : LookupElement() {
 
     private var lookupElement: LookupElement? = null
@@ -31,6 +31,11 @@ class ChineseLookupElement(
      * 控制该项在补全列表最终显示效果
      */
     override fun renderElement(presentation: LookupElementPresentation) {
+        // 若传入图片则按图片渲染
+        icon?.let {
+            presentation.icon = icon
+        }
+
         // 复制原元素类型,包位置,icon等信息
         lookupElement?.renderElement(presentation)
         // 文本【WenBen】

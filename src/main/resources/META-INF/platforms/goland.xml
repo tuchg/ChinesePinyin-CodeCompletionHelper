@@ -1,8 +1,7 @@
 <idea-plugin>
     <extensions defaultExtensionNs="com.intellij">
         <completion.contributor language="go"
-                                order="before GoCompletionContributor"
-                                implementationClass="com.github.tuchg.nonasciicodecompletionhelper.extensions.CHMFixCompletionContributor"/>
-
+                                order="first"
+                                implementationClass="com.github.tuchg.nonasciicodecompletionhelper.extensions.FixGoCompletionContributor"/>
     </extensions>
 </idea-plugin>
