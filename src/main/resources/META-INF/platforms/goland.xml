@@ -1,3 +1,8 @@
 <idea-plugin>
-    <depends></depends>
+    <extensions defaultExtensionNs="com.intellij">
+        <completion.contributor language="go"
+                                order="before GoCompletionContributor"
+                                implementationClass="com.github.tuchg.nonasciicodecompletionhelper.extensions.CHMFixCompletionContributor"/>
+
+    </extensions>
 </idea-plugin>

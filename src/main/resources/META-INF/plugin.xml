@@ -10,6 +10,7 @@
     <depends optional="true" config-file="platforms/kotlin.xml">org.jetbrains.kotlin</depends>
     <depends optional="true" config-file="platforms/clion.xml">com.intellij.modules.clion</depends>
     <depends optional="true" config-file="platforms/rider.xml">com.intellij.modules.rider</depends>
+    <depends optional="true" config-file="platforms/goland.xml">com.intellij.modules.go</depends>
 
 
     <extensions defaultExtensionNs="com.intellij">
