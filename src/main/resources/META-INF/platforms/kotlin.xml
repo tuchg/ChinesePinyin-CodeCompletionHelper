@@ -1,8 +1,7 @@
 <idea-plugin>
     <extensions defaultExtensionNs="com.intellij">
         <completion.contributor language="kotlin"
-                                order="first"
-                                implementationClass="com.github.tuchg.nonasciicodecompletionhelper.extensions.CHMFixCompletionContributor"/>
-
+                                order="first, before KotlinCompletionContributor"
+                                implementationClass="com.github.tuchg.nonasciicodecompletionhelper.extensions.ChineseCompletionContributor"/>
     </extensions>
 </idea-plugin>
