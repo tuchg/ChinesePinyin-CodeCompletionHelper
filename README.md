@@ -8,7 +8,8 @@
 
 <!-- Plugin description -->
 
-<a href="https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper">Github</a> | <a href="https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper/issues">Issues</a>  
+<a href="https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper">Github</a>
+| <a href="https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper/issues">Issues</a>
 
 <!-- E -->
 
@@ -35,30 +36,31 @@
 
 <!-- Plugin description end -->
 
-
-
 ## 安装
 
 - IDE 内建插件市场:
-  
+
   <kbd>Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>Marketplace</kbd> > <kbd>搜索 "pinyin"</kbd> >
   <kbd>Install Plugin</kbd>
-  
+
 - 手动:
 
-  展开 [latest release](https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper/releases/latest) 中的 `Assets` , 找到其下`*.jar`文件并下载，而后进入 IDE 
+  展开 [latest release](https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper/releases/latest) 中的 `Assets` ,
+  找到其下`*.jar`文件并下载，而后进入 IDE
   <kbd>Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> > <kbd>Install plugin from disk...</kbd>
 
-## ToDo list
+## ToDo
+
 - [x] 支持多音字补全
-- [ ] 提供搜索/替换框内的拼音中文补全,平台开放API尚处试验阶段,且使用频率不高,暂且搁置 [#issues-8](https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper/issues/8)
+- [ ] 
+  提供搜索/替换框内的拼音中文补全,平台开放API尚处试验阶段,且使用频率不高,暂且搁置 [#issues-8](https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper/issues/8)
 - [ ] 添加可视化配置界面
 - [ ] 支持非全拼输入补全，如五笔、双拼等
-- [ ] Kotlin 工作异常 [#issues-10](https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper/issues/10)
-- [ ] 支持 Rider 平台 [#issues-4](https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper/issues/4)
 - [ ] [多语言编程的设想：将变量名与自然语言解耦](https://www.v2ex.com/t/701390)
 
 ## 已知问题
+
+- [ ] 已知Kotlin、Go等因语言内部实现冲突，需在中文前添加语言合法ascii字符才能正常触发，[bug解决思路](doc/Bugs解决思路.md) 相关issues: #10 #4 #6
 - [ ] 中文包下中文类,补全其他包内容时未能自动出现问题 *双击补全键解决或给出更精确的输入*
 - [x] 补全项排序问题 ☑︎已第二次优化
 - [x] 大写英文带中文补全问题 [#issues-6](https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper/issues/6)
@@ -66,19 +68,20 @@
 - [x] 各部分算法优化
 - [x] 补全时部分提示信息丢失,如变量数据类型,包位置等
 
-
-
 ## 贡献
 
 欢迎感兴趣的同学提交 PR 参与维护
 [emoji commit参考](https://gitmoji.carloscuesta.me/)
 
+了解如何参与维护开发及现有bug思路可参考[此处](doc/)
+
 ![Python 演示](screenshots/py.GIF)
 
 ## Thanks
+
 Development powered by [JetBrains](https://www.jetbrains.com/?from=ChinesePinyinCodeCompletionHelper).
 
-[![JetBrains](screenshots/jetbrains.svg)](https://www.jetbrains.com/?from=ChinesePinyinCodeCompletionHelper) 
+[![JetBrains](screenshots/jetbrains.svg)](https://www.jetbrains.com/?from=ChinesePinyinCodeCompletionHelper)
 
 Whichever technologies you use, there's a JetBrains tool to match.
 
