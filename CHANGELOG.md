@@ -114,11 +114,17 @@
 
 ### Changed
 
+- 优化代码结构
+
 ### Deprecated
 
 ### Removed
 
 ### Fixed
+
+- 初步修复 Kotlin、Go补全问题，若不能正常补全，请按有效ascii字符(字母等)+中文的方式曲线救国
+- 修复 输入单个字符无响应
+- 修复 Go补全丢失图标问题
 
 ### Security
 
