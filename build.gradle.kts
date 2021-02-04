@@ -13,6 +13,9 @@ plugins {
     id("org.jetbrains.changelog") version "0.6.2"
 }
 
+// 自定义IDE位置，方便调试，切换平台
+val customIdeDir = """"""
+
 // Import variables from gradle.properties file
 val pluginGroup: String by project
 val pluginName_: String by project
@@ -30,14 +33,14 @@ version = pluginVersion
 
 // Configure project's dependencies
 repositories {
+    maven { setUrl("https://www.jetbrains.com/intellij-repository/releases/") }
+    maven { setUrl("https://www.jetbrains.com/intellij-repository/snapshots/") }
     maven { setUrl("https://maven.aliyun.com/repository/public/") }
     mavenLocal()
     mavenCentral()
-    jcenter()
 }
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
-    implementation(kotlin("reflect"))
 }
 
 // Configure gradle-intellij-plugin plugin.
@@ -48,6 +51,9 @@ intellij {
     type = platformType
     downloadSources = platformDownloadSources.toBoolean()
     updateSinceUntilBuild = true
+// 运行平台
+//    localPath = customIdeDir
+//    localSourcesPath = customIdeDir
 //  Plugin Dependencies:
 //  https://www.jetbrains.org/intellij/sdk/docs/basics/plugin_structure/plugin_dependencies.html
 // Plugin Dependencies. Uses `platformPlugins` property from the gradle.properties file.
@@ -65,7 +71,11 @@ tasks {
             kotlinOptions.jvmTarget = "1.8"
         }
     }
-
+    if (customIdeDir.isNotEmpty()) {
+        runIde {
+            ideDirectory(customIdeDir)
+        }
+    }
     patchPluginXml {
         version(pluginVersion)
         sinceBuild(pluginSinceBuild)
@@ -109,7 +119,6 @@ Compatible with all the Intellij Platform product, indiscriminate Chinese progra
     runPluginVerifier {
         ideVersions(pluginVerifierIdeVersions)
     }
-
     publishPlugin {
         dependsOn("patchChangelog")
         token(System.getenv("PUBLISH_TOKEN"))
