@@ -4,7 +4,7 @@
 [![Version](https://img.shields.io/jetbrains/plugin/v/14838.svg)](https://plugins.jetbrains.com/plugin/14838)
 [![Downloads](https://img.shields.io/jetbrains/plugin/d/14838.svg)](https://plugins.jetbrains.com/plugin/14838)
 
-![Java演示](screenshots/java.GIF)
+![Java演示](doc/截图/java/java.GIF)
 
 <!-- Plugin description -->
 
@@ -22,7 +22,7 @@
 * 函数名、变量名、类名等等标识符，只要能用中文标识的通通都支持
 * 支持双拼、五笔等各式输入方法（未来某版本发布✅）
 
-兼容 JB 全家桶，无差别中文编程，无论是 Java、JavaScript、Golang、Python、C#、C 艹 亦或者 Haskell 等等通通都支持
+兼容 JB 全家桶，无差别中文编程，无论是 Java、Python、JavaScript、Kotlin、Golang、、C#、C 艹 亦或者 Haskell 等等通通都支持
 
 <p></p>
 
@@ -75,13 +75,13 @@
 
 了解如何参与维护开发及现有bug思路可参考[此处](doc/)
 
-![Python 演示](screenshots/py.GIF)
+![Python 演示](doc/截图/python/py.GIF)
 
 ## Thanks
 
 Development powered by [JetBrains](https://www.jetbrains.com/?from=ChinesePinyinCodeCompletionHelper).
 
-[![JetBrains](screenshots/jetbrains.svg)](https://www.jetbrains.com/?from=ChinesePinyinCodeCompletionHelper)
+[![JetBrains](jetbrains.svg)](https://www.jetbrains.com/?from=ChinesePinyinCodeCompletionHelper)
 
 Whichever technologies you use, there's a JetBrains tool to match.
 
