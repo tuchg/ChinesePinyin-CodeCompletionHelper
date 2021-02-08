@@ -4,10 +4,7 @@ import com.github.tuchg.nonasciicodecompletionhelper.model.ChineseLookupElement
 import com.github.tuchg.nonasciicodecompletionhelper.model.ChinesePrefixMatcher
 import com.github.tuchg.nonasciicodecompletionhelper.utils.countContainsSomeChar
 import com.github.tuchg.nonasciicodecompletionhelper.utils.toPinyin
-import com.intellij.codeInsight.completion.CompletionContributor
-import com.intellij.codeInsight.completion.CompletionParameters
-import com.intellij.codeInsight.completion.CompletionResultSet
-import com.intellij.codeInsight.completion.PrioritizedLookupElement
+import com.intellij.codeInsight.completion.*
 import com.intellij.codeInsight.lookup.LookupElement
 import com.intellij.openapi.util.text.StringUtil
 import pansong291.simplepinyin.Pinyin
@@ -17,7 +14,7 @@ import pansong291.simplepinyin.Pinyin
  * @date 2020-8-1
  */
 // 自定义了的语言
-val languages = arrayOf("Go")
+val languages = arrayOf("Go", "Kotlin")
 
 open class ChineseCompletionContributor() : CompletionContributor() {
     override fun fillCompletionVariants(parameters: CompletionParameters, result: CompletionResultSet) {
@@ -25,7 +22,7 @@ open class ChineseCompletionContributor() : CompletionContributor() {
         if (languages.contains(parameters.originalFile.fileType.name) && this.javaClass.simpleName == "ChineseCompletionContributor") {
             return
         }
-
+//        println("当前线程:${Thread.currentThread()}")
         val prefix = result.prefixMatcher.prefix.toLowerCase()
         val resultSet = result
             .withPrefixMatcher(ChinesePrefixMatcher(prefix))
@@ -56,10 +53,10 @@ open class ChineseCompletionContributor() : CompletionContributor() {
                     }
                 }
                 closest?.let {
-                    val priority = StringUtil.difference(it, prefix) * 100.0
+                    val priority = StringUtil.difference(it, prefix) * 1000.0
                     if (flag) {
                         // 追加补全列表
-                        renderElementHandle(element, it, priority, resultSet)
+                        renderElementHandle(element, it, priority, resultSet, r)
                     }
                 }
             } else
@@ -69,11 +66,17 @@ open class ChineseCompletionContributor() : CompletionContributor() {
         resultSet.restartCompletionWhenNothingMatches()
     }
 
-    open val renderElementHandle: (element: LookupElement, pinyin: String, priority: Double, rs: CompletionResultSet) -> Unit =
-        { element, pinyin, priority, rs ->
+    open val renderElementHandle: (element: LookupElement, pinyin: String, priority: Double, rs: CompletionResultSet, r: CompletionResult) -> Unit =
+        { element, pinyin, priority, rs, r ->
             val chineseLookupElement =
                 ChineseLookupElement(element.lookupString, pinyin)
                     .copyFrom(element)
-            rs.addElement(PrioritizedLookupElement.withPriority(chineseLookupElement, priority))
+//            val originalLookup = chineseLookupElement.originalLookup
+//            if (originalLookup is PrioritizedLookupElement<*>) {
+//                println()
+//            }
+            val withPriority = PrioritizedLookupElement.withPriority(chineseLookupElement, priority)
+            val wrap = CompletionResult.wrap(withPriority, r.prefixMatcher, r.sorter)
+            rs.passResult(wrap!!)
         };
 }
