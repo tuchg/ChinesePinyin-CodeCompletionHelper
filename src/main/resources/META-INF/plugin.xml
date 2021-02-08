@@ -15,6 +15,7 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <completion.contributor language="any"
+                                order="first"
                                 implementationClass="com.github.tuchg.nonasciicodecompletionhelper.extensions.ChineseCompletionContributor"/>
         <postStartupActivity
                 implementation="com.github.tuchg.nonasciicodecompletionhelper.extensions.UpdateNotifyActivity"/>
