@@ -1,8 +1,23 @@
 <!-- Keep a Changelog guide -> https://keepachangelog.com -->
 
 # Changelog
+## [0.1.6] 2021-02-09
 
-## [0.1.5]
+### Added
+
+### Changed
+- 修改 列表优先级算法
+### Deprecated
+
+### Removed
+
+### Fixed
+- 修复 JavaScript 补全失效问题
+- 修复 大多数语言长久以来的排序不能置顶问题
+
+### Security
+
+## [0.1.5] 2021-02-04
 
 ### Added
 
