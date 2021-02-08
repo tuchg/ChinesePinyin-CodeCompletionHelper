@@ -1,13 +1,9 @@
 package com.github.tuchg.nonasciicodecompletionhelper.extensions
 
 import com.github.tuchg.nonasciicodecompletionhelper.model.ChineseLookupElement
-import com.goide.GoIcons
 import com.intellij.codeInsight.completion.CompletionResultSet
 import com.intellij.codeInsight.completion.PrioritizedLookupElement
 import com.intellij.codeInsight.lookup.LookupElement
-import com.intellij.icons.AllIcons
-import com.intellij.psi.tree.IElementType
-import com.intellij.psi.util.elementType
 
 /**
  * @author: tuchg
