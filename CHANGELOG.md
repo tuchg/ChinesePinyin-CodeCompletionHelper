@@ -155,4 +155,16 @@
 ### Fixed
 
 ### Security
+## [0.1.6]
+### Added
+
+### Changed
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
 
