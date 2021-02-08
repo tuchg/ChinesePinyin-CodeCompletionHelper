@@ -4,8 +4,12 @@ import com.github.tuchg.nonasciicodecompletionhelper.model.ChineseLookupElement
 import com.github.tuchg.nonasciicodecompletionhelper.model.ChinesePrefixMatcher
 import com.github.tuchg.nonasciicodecompletionhelper.utils.countContainsSomeChar
 import com.github.tuchg.nonasciicodecompletionhelper.utils.toPinyin
-import com.intellij.codeInsight.completion.*
+import com.intellij.codeInsight.completion.CompletionContributor
+import com.intellij.codeInsight.completion.CompletionParameters
+import com.intellij.codeInsight.completion.CompletionResultSet
+import com.intellij.codeInsight.completion.PrioritizedLookupElement
 import com.intellij.codeInsight.lookup.LookupElement
+import com.intellij.openapi.util.text.StringUtil
 import pansong291.simplepinyin.Pinyin
 
 /**
@@ -52,8 +56,7 @@ open class ChineseCompletionContributor() : CompletionContributor() {
                     }
                 }
                 closest?.let {
-                    // 为完全匹配项提供排序最高优先级
-                    val priority = if (it.length == prefix.length) 2000.0 else 10.0
+                    val priority = StringUtil.difference(it, prefix) * 100.0
                     if (flag) {
                         // 追加补全列表
                         renderElementHandle(element, it, priority, resultSet)
