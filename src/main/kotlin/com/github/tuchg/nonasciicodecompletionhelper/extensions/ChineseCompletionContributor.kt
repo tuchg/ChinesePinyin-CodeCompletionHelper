@@ -53,7 +53,7 @@ open class ChineseCompletionContributor() : CompletionContributor() {
                     }
                 }
                 closest?.let {
-                    val priority = StringUtil.difference(it, prefix) * 1000.0
+                    val priority = if (prefix.isNotEmpty()) StringUtil.difference(it, prefix) * 1000.0 else 5.0
                     if (flag) {
                         // 追加补全列表
                         renderElementHandle(element, it, priority, resultSet, r)
