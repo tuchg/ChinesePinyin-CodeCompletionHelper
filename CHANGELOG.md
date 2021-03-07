@@ -1,6 +1,11 @@
 <!-- Keep a Changelog guide -> https://keepachangelog.com -->
 
 # Changelog
+## [0.1.7] 2021-03-07
+### Fixed
+- 修复.输入越界异常
+### Security
+
 ## [0.1.6] 2021-02-09
 
 ### Added
