@@ -153,18 +153,5 @@
 ### Removed
 
 ### Fixed
-
+   修复.输入越界异常
 ### Security
-## [0.1.6]
-### Added
-
-### Changed
-
-### Deprecated
-
-### Removed
-
-### Fixed
-
-### Security
-
