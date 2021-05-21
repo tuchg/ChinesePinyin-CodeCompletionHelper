@@ -30,9 +30,6 @@
 
 如果对您有所帮助，别忘了给本项目<a href="https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper"> Github </a>主页一颗 Star😁
 
-<h4>其他平台类似支持</h4>
-
-* <a href="https://gitee.com/Program-in-Chinese/vscode_Chinese_Input_Assistant">中文代码快速补全 VS Code 插件</a>
 
 <!-- Plugin description end -->
 
@@ -67,6 +64,13 @@
 - [x] 中文包下中文类,调用本类名相关补全时当前类重复出现一次的问题
 - [x] 各部分算法优化
 - [x] 补全时部分提示信息丢失,如变量数据类型,包位置等
+
+## 相关推荐
+
+* <a href="https://gitee.com/Program-in-Chinese/vscode_Chinese_Input_Assistant">中文代码快速补全 VS Code 插件</a>
+* <a href="https://github.com/duolabmeng6/pyefun">Python 易函数 (语言标准API汉化库)</a>
+* <a href="https://github.com/duolabmeng6/goefun">Golang 易函数</a>
+
 
 ## 贡献
 
