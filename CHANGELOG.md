@@ -160,15 +160,3 @@
 ### Fixed
 
 ### Security
-## [0.1.7]
-### Added
-
-### Changed
-
-### Deprecated
-
-### Removed
-
-### Fixed
-   修复.输入越界异常
-### Security
