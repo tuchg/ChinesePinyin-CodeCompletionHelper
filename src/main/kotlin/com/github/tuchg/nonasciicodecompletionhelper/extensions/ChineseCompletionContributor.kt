@@ -18,12 +18,16 @@ val languages = arrayOf("Go", "Kotlin")
 
 open class ChineseCompletionContributor() : CompletionContributor() {
     override fun fillCompletionVariants(parameters: CompletionParameters, result: CompletionResultSet) {
-        // 手工过滤没必要的
+        // 手工过滤没必要执行的贡献器流程
         if (languages.contains(parameters.originalFile.fileType.name) && this.javaClass.simpleName == "ChineseCompletionContributor") {
             return
         }
-//        println("当前线程:${Thread.currentThread()}")
-        val prefix = result.prefixMatcher.prefix.toLowerCase()
+        // fix: 将含有中文的输入转换为拼音
+        val prefix = if (Pinyin.hasChinese(result.prefixMatcher.prefix)) toPinyin(
+            result.prefixMatcher.prefix,
+            Pinyin.LOW_CASE
+        )[0] else result.prefixMatcher.prefix.toLowerCase()
+
         val resultSet = result
             .withPrefixMatcher(ChinesePrefixMatcher(prefix))
         resultSet.addLookupAdvertisement("输入拼音,补全中文标识符;若无满意结果,请再次激活补全快捷键或给出更精确的输入;不能正常使用可以试试字母汉字组合")
@@ -71,10 +75,6 @@ open class ChineseCompletionContributor() : CompletionContributor() {
             val chineseLookupElement =
                 ChineseLookupElement(element.lookupString, pinyin)
                     .copyFrom(element)
-//            val originalLookup = chineseLookupElement.originalLookup
-//            if (originalLookup is PrioritizedLookupElement<*>) {
-//                println()
-//            }
             val withPriority = PrioritizedLookupElement.withPriority(chineseLookupElement, priority)
             val wrap = CompletionResult.wrap(withPriority, r.prefixMatcher, r.sorter)
             rs.passResult(wrap!!)
