@@ -39,7 +39,7 @@ class ChinesePrefixMatcher : PlainPrefixMatcher {
         val prefix = CamelHumpMatcher.applyMiddleMatching(myPrefix)
         var builder = NameUtil.buildMatcher(prefix)
         if (caseSensitive) {
-            val setting = CodeInsightSettings.getInstance().completionCaseSensitive
+            val setting = CodeInsightSettings.getInstance().COMPLETION_CASE_SENSITIVE
             if (setting == CodeInsightSettings.FIRST_LETTER) {
                 builder = builder.withCaseSensitivity(NameUtil.MatchingCaseSensitivity.FIRST_LETTER)
             } else if (setting == CodeInsightSettings.ALL) {
