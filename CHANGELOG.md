@@ -1,6 +1,14 @@
 <!-- Keep a Changelog guide -> https://keepachangelog.com -->
 
 # Changelog
+## [0.1.8] 2021-07-01
+### Fixed
+- 修复 安装插件后输入首字母补全无返回问题 issues#45 #I3PJ0Y
+- 修复 中途智能输入问题 issues#44
+
+### Security
+
+
 ## [0.1.7] 2021-03-07
 ### Fixed
 - 修复.输入越界异常
@@ -152,11 +160,12 @@
 ### Added
 
 ### Changed
-
+    
 ### Deprecated
 
 ### Removed
-
+    
 ### Fixed
+
 
 ### Security
