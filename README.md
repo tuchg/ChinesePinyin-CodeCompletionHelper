@@ -3,32 +3,41 @@
 ![Build](https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper/workflows/Build/badge.svg)
 [![Version](https://img.shields.io/jetbrains/plugin/v/14838.svg)](https://plugins.jetbrains.com/plugin/14838)
 [![Downloads](https://img.shields.io/jetbrains/plugin/d/14838.svg)](https://plugins.jetbrains.com/plugin/14838)
-
+![GitHub Repo stars](https://img.shields.io/github/stars/tuchg/ChinesePinyin-CodeCompletionHelper?color=green&logo=github&style=flat)
+[![star](https://gitee.com/tuchg/ChinesePinyin-CodeCompletionHelper/badge/star.svg?theme=white)](https://gitee.com/tuchg/ChinesePinyin-CodeCompletionHelper/stargazers)
 ![Java演示](doc/截图/java/java.GIF)
 
 <!-- Plugin description -->
 
-<a href="https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper">Github</a>
+<a href="https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper">Github</a>|
+<a href="https://gitee.com/tuchg/ChinesePinyin-CodeCompletionHelper">Gitee</a>
 | <a href="https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper/issues">Issues</a>
 
 <!-- E -->
 
 > 初衷在于，一些业务上不太适合用英语表达的，可以用上直白的母语而非拼音，然后像平常写代码那样去调用母语所表达的东西，解决部分命名困难症🤔
 
-让你的 IDE 支持中文编程，享受和英文环境一致的中文智能编码体验
+让你的 IDE 支持中文智能编码，享受和英文环境一致的中文智能编码体验
 
-* 拼音输入补全，如上下文存在 `中文` 标识符, 输入 zw，则会补全提示中文【**Z**hong**W**en】
+* 拼音输入补全，如果上下文存在 `中文` 标识符, 输入 zw，则会补全提示中文【**Z**hong**W**en】
 * 多音字无差别补全
 * 函数名、变量名、类名等等标识符，只要能用中文标识的通通都支持
-* 支持双拼、五笔等各式输入方法（未来某版本发布✅）
+* 支持双拼、五笔等各式输入方法（现功能完善后计划✅）
 
 兼容 JB 全家桶，无差别中文编码，无论是 Java、Python、JavaScript、Kotlin、Golang、、C#、C 艹 亦或者 Haskell 等等通通都支持
 
 <p></p>
 
-提示：当提示 `no ascii` 时，可按提示电灯泡关闭该提示
+推荐使用中文命名标识符的场景：
 
-如果对您有所帮助，别忘了给本项目<a href="https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper"> Github </a>主页一颗 Star😁
+* 传统文化背景的相关产品开发命名问题
+* 现有项目充斥大量缩写歧义拼音
+* 团队开发人员英语素质参差不齐
+
+> 提示：当提示 `no ascii` 时，可按提示电灯泡关闭该提示
+
+如果对您有所帮助，别忘了给本项目<a href="https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper"> Github </a>主页一颗
+Star😁，你的支持是项目前进的动力
 
 
 <!-- Plugin description end -->
@@ -62,8 +71,7 @@
 * <a href="https://github.com/duolabmeng6/pyefun">Python 易函数 (语言标准API汉化库)</a>
 * <a href="https://github.com/duolabmeng6/goefun">Golang 易函数</a>
 
-
-## 贡献
+## 项目维护
 
 欢迎对本项目感兴趣的同学PR，共同维护
 [emoji commit参考](https://gitmoji.carloscuesta.me/)
