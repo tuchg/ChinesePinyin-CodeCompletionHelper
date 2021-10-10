@@ -1,7 +1,7 @@
-package com.github.tuchg.nonasciicodecompletionhelper.extensions
+package com.github.tuchg.nonasciicodecompletionhelper.completion.contributor
 
-import com.github.tuchg.nonasciicodecompletionhelper.model.ChineseLookupElement
-import com.github.tuchg.nonasciicodecompletionhelper.model.ChinesePrefixMatcher
+import com.github.tuchg.nonasciicodecompletionhelper.completion.ChineseLookupElement
+import com.github.tuchg.nonasciicodecompletionhelper.completion.ChinesePrefixMatcher
 import com.github.tuchg.nonasciicodecompletionhelper.utils.countContainsSomeChar
 import com.github.tuchg.nonasciicodecompletionhelper.utils.toPinyin
 import com.intellij.codeInsight.completion.*

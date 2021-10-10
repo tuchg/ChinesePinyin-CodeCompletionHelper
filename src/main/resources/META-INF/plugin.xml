@@ -16,10 +16,18 @@
     <extensions defaultExtensionNs="com.intellij">
         <completion.contributor language="any"
                                 order="first"
-                                implementationClass="com.github.tuchg.nonasciicodecompletionhelper.extensions.ChineseCompletionContributor"/>
+                                implementationClass="com.github.tuchg.nonasciicodecompletionhelper.completion.contributor.ChineseCompletionContributor"/>
         <postStartupActivity
-                implementation="com.github.tuchg.nonasciicodecompletionhelper.extensions.UpdateNotifyActivity"/>
+                implementation="com.github.tuchg.nonasciicodecompletionhelper.config.UpdateNotifyActivity"/>
+
         <applicationService
-                serviceImplementation="com.github.tuchg.nonasciicodecompletionhelper.config.Settings"/>
+                serviceImplementation="com.github.tuchg.nonasciicodecompletionhelper.config.PluginSettingsState"/>
+        <applicationConfigurable
+                parentId="tools"
+                instance="com.github.tuchg.nonasciicodecompletionhelper.config.PluginSettingsController"
+                displayName="Pinyin Completion Helper"
+        />
+
+
     </extensions>
 </idea-plugin>

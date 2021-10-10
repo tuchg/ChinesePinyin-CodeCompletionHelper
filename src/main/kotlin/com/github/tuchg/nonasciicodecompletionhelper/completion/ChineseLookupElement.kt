@@ -1,4 +1,4 @@
-package com.github.tuchg.nonasciicodecompletionhelper.model
+package com.github.tuchg.nonasciicodecompletionhelper.completion
 
 import com.intellij.codeInsight.completion.InsertionContext
 import com.intellij.codeInsight.lookup.LookupElement

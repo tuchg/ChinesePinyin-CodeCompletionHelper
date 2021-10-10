@@ -1,6 +1,5 @@
-package com.github.tuchg.nonasciicodecompletionhelper.extensions
+package com.github.tuchg.nonasciicodecompletionhelper.config
 
-import com.github.tuchg.nonasciicodecompletionhelper.config.Settings
 import com.github.tuchg.nonasciicodecompletionhelper.utils.createNotification
 import com.github.tuchg.nonasciicodecompletionhelper.utils.showFullNotification
 import com.intellij.ide.plugins.IdeaPluginDescriptor
@@ -23,7 +22,7 @@ class UpdateNotifyActivity : StartupActivity {
 
     override fun runActivity(project: Project) {
 //        removeIfInstalled()
-        val settings = Settings.instance
+        val settings = PluginSettingsState.instance
         if (getPlugin()?.version != settings.version) {
             settings.version = getPlugin()!!.version
             showUpdate(project)

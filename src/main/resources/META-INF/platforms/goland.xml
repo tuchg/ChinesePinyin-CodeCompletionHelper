@@ -2,6 +2,6 @@
     <extensions defaultExtensionNs="com.intellij">
         <completion.contributor language="go"
                                 order="first"
-                                implementationClass="com.github.tuchg.nonasciicodecompletionhelper.extensions.FixGoCompletionContributor"/>
+                                implementationClass="com.github.tuchg.nonasciicodecompletionhelper.completion.contributor.FixGoCompletionContributor"/>
     </extensions>
 </idea-plugin>

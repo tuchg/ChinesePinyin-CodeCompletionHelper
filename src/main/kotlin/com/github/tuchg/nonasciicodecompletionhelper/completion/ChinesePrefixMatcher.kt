@@ -1,4 +1,4 @@
-package com.github.tuchg.nonasciicodecompletionhelper.model
+package com.github.tuchg.nonasciicodecompletionhelper.completion
 
 import com.github.tuchg.nonasciicodecompletionhelper.utils.countContainsSomeChar
 import com.github.tuchg.nonasciicodecompletionhelper.utils.toPinyin

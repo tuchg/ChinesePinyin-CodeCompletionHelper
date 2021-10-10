@@ -8,15 +8,15 @@ import com.intellij.util.xmlb.XmlSerializerUtil.copyBean
 import org.jetbrains.annotations.Nullable
 
 /**
+ * 持久保存用户配置 -Model
  * @author: tuchg
  * @date: 2020/11/20 14:01
- * @description:
  */
 @State(name = "CCompletionHelperSettings", storages = [(Storage("chinese_completion_helper.xml"))])
-class Settings : PersistentStateComponent<Settings> {
+class PluginSettingsState : PersistentStateComponent<PluginSettingsState> {
     companion object {
-        val instance: Settings
-            get() = getService(Settings::class.java)
+        val instance: PluginSettingsState
+            get() = getService(PluginSettingsState::class.java)
     }
 
     /**
@@ -27,7 +27,7 @@ class Settings : PersistentStateComponent<Settings> {
     @Nullable
     override fun getState() = this
 
-    override fun loadState(state: Settings) {
+    override fun loadState(state: PluginSettingsState) {
         copyBean(state, this)
     }
 }
