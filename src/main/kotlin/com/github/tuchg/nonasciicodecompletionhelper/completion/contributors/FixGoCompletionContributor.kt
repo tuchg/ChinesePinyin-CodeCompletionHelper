@@ -1,4 +1,4 @@
-package com.github.tuchg.nonasciicodecompletionhelper.completion.contributor
+package com.github.tuchg.nonasciicodecompletionhelper.completion.contributors
 
 import com.github.tuchg.nonasciicodecompletionhelper.completion.ChineseLookupElement
 import com.intellij.codeInsight.completion.CompletionResult

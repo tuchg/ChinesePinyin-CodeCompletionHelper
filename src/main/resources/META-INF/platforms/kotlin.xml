@@ -2,6 +2,6 @@
     <extensions defaultExtensionNs="com.intellij">
         <completion.contributor language="kotlin"
                                 order="first, before KotlinCompletionContributor"
-                                implementationClass="com.github.tuchg.nonasciicodecompletionhelper.completion.contributor.FixGoCompletionContributor"/>
+                                implementationClass="com.github.tuchg.nonasciicodecompletionhelper.completion.contributors.FixGoCompletionContributor"/>
     </extensions>
 </idea-plugin>

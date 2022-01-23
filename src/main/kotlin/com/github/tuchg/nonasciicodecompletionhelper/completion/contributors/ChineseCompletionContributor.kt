@@ -1,7 +1,8 @@
-package com.github.tuchg.nonasciicodecompletionhelper.completion.contributor
+package com.github.tuchg.nonasciicodecompletionhelper.completion.contributors
 
 import com.github.tuchg.nonasciicodecompletionhelper.completion.ChineseLookupElement
 import com.github.tuchg.nonasciicodecompletionhelper.completion.ChinesePrefixMatcher
+import com.github.tuchg.nonasciicodecompletionhelper.config.PluginSettingsState
 import com.github.tuchg.nonasciicodecompletionhelper.utils.countContainsSomeChar
 import com.github.tuchg.nonasciicodecompletionhelper.utils.toPinyin
 import com.intellij.codeInsight.completion.*
@@ -18,23 +19,26 @@ val languages = arrayOf("Go", "Kotlin")
 
 open class ChineseCompletionContributor() : CompletionContributor() {
     override fun fillCompletionVariants(parameters: CompletionParameters, result: CompletionResultSet) {
+        val pluginSettingsState = PluginSettingsState.instance
+
         // 手工过滤没必要执行的贡献器流程
         if (languages.contains(parameters.originalFile.fileType.name) && this.javaClass.simpleName == "ChineseCompletionContributor") {
             return
         }
         // fix: 将含有中文的输入转换为拼音
-        val prefix = if (Pinyin.hasChinese(result.prefixMatcher.prefix)) toPinyin(
-            result.prefixMatcher.prefix,
-            Pinyin.LOW_CASE
-        )[0] else result.prefixMatcher.prefix.toLowerCase()
+        val prefix = if (Pinyin.hasChinese(result.prefixMatcher.prefix)) {
+
+            toPinyin(
+                result.prefixMatcher.prefix,
+                Pinyin.LOW_CASE
+            )[0]
+        } else result.prefixMatcher.prefix.toLowerCase()
 
         val resultSet = result
             .withPrefixMatcher(ChinesePrefixMatcher(prefix))
         resultSet.addLookupAdvertisement("输入拼音,补全中文标识符;若无满意结果,请再次激活补全快捷键或给出更精确的输入;不能正常使用可以试试字母汉字组合")
-        /**
-         * todo 可暴力解决 bug:[需二次激活获取补全] 但性能影响较大
-         * parameters.withInvocationCount(2)
-         */
+
+
         // 先跳过当前 Contributors 获取包装后的 lookupElement而后进行修改装饰
         resultSet.runRemainingContributors(parameters) { r ->
             val element = r.lookupElement
@@ -48,7 +52,7 @@ open class ChineseCompletionContributor() : CompletionContributor() {
                             it[0]
                         } else null
                     }
-                    it.maxBy { str ->
+                    it.maxByOrNull { str ->
                         val count = countContainsSomeChar(str.toLowerCase(), prefix)
                         if (count >= prefix.length) {
                             flag = true
