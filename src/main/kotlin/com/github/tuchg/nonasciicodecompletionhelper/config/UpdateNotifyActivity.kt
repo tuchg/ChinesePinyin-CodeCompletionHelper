@@ -4,9 +4,6 @@ import com.github.tuchg.nonasciicodecompletionhelper.utils.createNotification
 import com.github.tuchg.nonasciicodecompletionhelper.utils.showFullNotification
 import com.intellij.ide.plugins.IdeaPluginDescriptor
 import com.intellij.ide.plugins.PluginManagerCore
-import com.intellij.ide.plugins.PluginManagerCore.isPluginInstalled
-import com.intellij.ide.startup.StartupActionScriptManager
-import com.intellij.ide.startup.StartupActionScriptManager.DeleteCommand
 import com.intellij.notification.NotificationListener.UrlOpeningListener
 import com.intellij.notification.NotificationType
 import com.intellij.openapi.extensions.PluginId
@@ -29,20 +26,8 @@ class UpdateNotifyActivity : StartupActivity {
         }
     }
 
-    private fun removeIfInstalled() {
-        val pluginId = PluginId.getId(pluginId)
-        val isInstalled = isPluginInstalled(pluginId)
-        if (isInstalled) {
-            val pluginDescriptor = PluginManagerCore.getPlugin(pluginId)
-            if (pluginDescriptor != null) {
-                StartupActionScriptManager.addActionCommand(DeleteCommand(pluginDescriptor.path))
-            }
-        }
-    }
-
     companion object {
         private const val pluginId = "com.github.tuchg.nonasciicodecompletionhelper"
-
 
         private val updateContent: String by lazy {
             //language=HTML
@@ -94,7 +79,6 @@ class UpdateNotifyActivity : StartupActivity {
             val notification = createNotification(
                 updateMsg(),
                 updateContent,
-                pluginId,
                 NotificationType.INFORMATION,
                 UrlOpeningListener(false)
             )

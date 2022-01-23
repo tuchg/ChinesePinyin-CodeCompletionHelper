@@ -16,7 +16,7 @@
     <extensions defaultExtensionNs="com.intellij">
         <completion.contributor language="any"
                                 order="first"
-                                implementationClass="com.github.tuchg.nonasciicodecompletionhelper.completion.contributor.ChineseCompletionContributor"/>
+                                implementationClass="com.github.tuchg.nonasciicodecompletionhelper.completion.contributors.ChineseCompletionContributor"/>
         <postStartupActivity
                 implementation="com.github.tuchg.nonasciicodecompletionhelper.config.UpdateNotifyActivity"/>
 
@@ -27,7 +27,7 @@
                 instance="com.github.tuchg.nonasciicodecompletionhelper.config.PluginSettingsController"
                 displayName="Pinyin Completion Helper"
         />
-
+        <notificationGroup id="Pinyin Completion Helper Notification Group" displayType="STICKY_BALLOON"/>
 
     </extensions>
 </idea-plugin>
