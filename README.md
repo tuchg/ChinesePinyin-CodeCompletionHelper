@@ -22,7 +22,7 @@
 * 拼音输入补全，如果上下文存在 `中文` 标识符, 输入 zw，则会补全提示中文【**Z**hong**W**en】
 * 多音字无差别补全
 * 函数名、变量名、类名等等标识符，只要能用中文标识的通通都支持
-* 支持双拼、五笔等各式输入方法（现功能完善后计划✅）
+* 支持双拼、五笔等各式输入方法
 
 兼容 JB 全家桶，无差别中文编码，无论是 Java、Python、JavaScript、Kotlin、Golang、、C#、C 艹 亦或者 Haskell 等等通通都支持
 
@@ -56,11 +56,10 @@ Star😁，你的支持是项目前进的动力
   <kbd>Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> > <kbd>Install plugin from disk...</kbd>
 
 ## ToDo
-
+- [ ] 现插件因Intellij部分语言前缀匹配器实现问题导致补全无法正常运作，经[IDEA-251113](https://github.com/JetBrains/intellij-community/commit/71a587c4b23667bb09d1f1dc830647b133953a9e) 支持已可运作，有望于 2022.1 EAP集成
 - [x] 支持多音字补全
-- [ ] 已知Kotlin、Go等因语言内部实现冲突，需在中文前添加语言合法ascii字符才能正常触发，[bug解决思路](doc/Bugs解决思路.md) 相关issues: #10 #4 #6
-- [ ] 
-  提供搜索/替换框内的拼音中文补全,平台开放API尚处试验阶段,且使用频率不高,暂且搁置 [#issues-8](https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper/issues/8)
+- [x] 已知Kotlin、Go等因语言内部实现冲突，需在中文前添加语言合法ascii字符才能正常触发
+- [x] 提供搜索/替换框内的拼音中文补全 
 - [ ] 添加可视化配置界面
 - [ ] 支持非全拼输入补全，如五笔、双拼等
 - [ ] [多语言编程的设想：将变量名与自然语言解耦](https://www.v2ex.com/t/701390)
@@ -76,7 +75,7 @@ Star😁，你的支持是项目前进的动力
 欢迎对本项目感兴趣的同学PR，共同维护
 [emoji commit参考](https://gitmoji.carloscuesta.me/)
 
-了解如何参与维护开发及现有bug思路可参考[此处](doc/)
+了解如何参与维护开发及现有bug思路可参考[此处](doc/Bugs解决思路.md)
 
 ![Python 演示](doc/截图/python/py.GIF)
 
