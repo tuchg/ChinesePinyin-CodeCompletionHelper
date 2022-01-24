@@ -11,18 +11,19 @@ import com.intellij.util.xmlb.XmlSerializerUtil.copyBean
  * @author: tuchg
  * @date: 2020/11/20 14:01
  */
-@State(name = "CCompletionHelperSettings", storages = [(Storage("chinese_completion_helper.xml"))])
+@State(name = "CCompletionHelperSettings", storages = [(Storage("pinyin_completion_helper.xml"))])
 class PluginSettingsState : PersistentStateComponent<PluginSettingsState> {
     // 提示方式设置，如全拼、五笔等
-    public var inputPattern: String? = null
+    public var inputPattern: PatternType = PatternType.全拼
     // 自定义码表，支持自定义码表 并提供图形支持
 
-    // 用于解决一词多音问题的选项
-    public var enableFullMatch: Boolean = false
+    // 用于解决一词多音不正确显示问题的选项
+    public var enableCompleteMatch: Boolean = true
 
     // 激活强力补全 用于暴力补全部分补全未显示的问题
     public var enableForceCompletion: Boolean = false
 
+    // todo 默认增加一个禁用 Ascii intention 的功能
 
     companion object {
         val instance: PluginSettingsState

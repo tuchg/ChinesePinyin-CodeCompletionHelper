@@ -27,7 +27,10 @@ open class ChineseCompletionContributor() : CompletionContributor() {
         }
         // fix: 将含有中文的输入转换为拼音
         val prefix = if (Pinyin.hasChinese(result.prefixMatcher.prefix)) {
-
+            //feature:可暴力解决 bug:二次激活获取补全 但性能影响较大
+            if (pluginSettingsState.enableForceCompletion) {
+                parameters.withInvocationCount(2)
+            }
             toPinyin(
                 result.prefixMatcher.prefix,
                 Pinyin.LOW_CASE

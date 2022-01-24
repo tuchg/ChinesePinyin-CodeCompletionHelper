@@ -31,19 +31,24 @@ class PluginSettingsController : Configurable {
         val settings: PluginSettingsState = PluginSettingsState.instance
 //        var modified: Boolean = !mySettingsComponent?.getUserNameText().equals(settings.userId)
 //        modified = modified or (mySettingsComponent?.getIdeaUserStatus() ?:  !== settings.ideaStatus)
-        return false
+//        settings.enableForceCompletion = mySettingsComponent?.getIdeaUserStatus() == true
+        return !mySettingsComponent?.getForceCompletionStatus()?.equals(settings.enableForceCompletion)!!
     }
 
     override fun apply() {
         val settings: PluginSettingsState = PluginSettingsState.instance
 //        settings.userId = mySettingsComponent?.getUserNameText()
 //        settings.ideaStatus = mySettingsComponent?.getIdeaUserStatus()
+        settings.enableForceCompletion = mySettingsComponent?.getForceCompletionStatus() == true
     }
 
+    /**
+     * 同步状态至页面显示
+     */
     override fun reset() {
         val settings: PluginSettingsState = PluginSettingsState.instance
-//        mySettingsComponent?.setUserNameText(settings.userId)
-//        mySettingsComponent?.setIdeaUserStatus(settings.ideaStatus)
+//        mySettingsComponent?.setUserNameText(settings)
+        mySettingsComponent?.setForceCompletionStatus(settings.enableForceCompletion)
     }
 
     override fun disposeUIResources() {
