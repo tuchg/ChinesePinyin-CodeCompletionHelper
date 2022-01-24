@@ -25,22 +25,17 @@ open class ChineseCompletionContributor() : CompletionContributor() {
         if (languages.contains(parameters.originalFile.fileType.name) && this.javaClass.simpleName == "ChineseCompletionContributor") {
             return
         }
-        // fix: 将含有中文的输入转换为拼音
-        val prefix = if (Pinyin.hasChinese(result.prefixMatcher.prefix)) {
-            //feature:可暴力解决 bug:二次激活获取补全 但性能影响较大
-            if (pluginSettingsState.enableForceCompletion) {
-                parameters.withInvocationCount(2)
-            }
-            toPinyin(
-                result.prefixMatcher.prefix,
-                Pinyin.LOW_CASE
-            )[0]
-        } else result.prefixMatcher.prefix.toLowerCase()
+
+        //feature:可暴力解决 bug:二次激活获取补全 但性能影响较大
+        if (pluginSettingsState.enableForceCompletion) {
+            parameters.withInvocationCount(2)
+        }
+
+        val prefix = result.prefixMatcher.prefix
 
         val resultSet = result
-            .withPrefixMatcher(ChinesePrefixMatcher(prefix))
+            .withPrefixMatcher(ChinesePrefixMatcher(result.prefixMatcher))
         resultSet.addLookupAdvertisement("输入拼音,补全中文标识符;若无满意结果,请再次激活补全快捷键或给出更精确的输入;不能正常使用可以试试字母汉字组合")
-
 
         // 先跳过当前 Contributors 获取包装后的 lookupElement而后进行修改装饰
         resultSet.runRemainingContributors(parameters) { r ->
@@ -64,6 +59,7 @@ open class ChineseCompletionContributor() : CompletionContributor() {
                     }
                 }
                 closest?.let {
+                    // 完全匹配的优先级需提高
                     val priority = if (prefix.isNotEmpty()) StringUtil.difference(it, prefix) * 1000.0 else 5.0
                     if (flag) {
                         // 追加补全列表
