@@ -59,7 +59,7 @@ open class ChineseCompletionContributor() : CompletionContributor() {
                     }
                 }
                 closest?.let {
-                    // 完全匹配的优先级需提高
+                    //todo 完全匹配的优先级需提高
                     val priority = if (prefix.isNotEmpty()) StringUtil.difference(it, prefix) * 1000.0 else 5.0
                     if (flag) {
                         // 追加补全列表

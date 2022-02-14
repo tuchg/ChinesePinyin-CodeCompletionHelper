@@ -8,5 +8,6 @@ package com.github.tuchg.nonasciicodecompletionhelper.config
 enum class PatternType {
     全拼,
     五笔,
-    双拼
+    双拼,
+    自定义
 }

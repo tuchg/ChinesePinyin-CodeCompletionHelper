@@ -25,13 +25,21 @@ class PluginSettingsView {
 
     init {
         myMainPanel =
-            FormBuilder.createFormBuilder().addLabeledComponent(JBLabel("Enter user name: "), myUserNameText, 1, false)
+            FormBuilder.createFormBuilder()
+                .addLabeledComponent(JBLabel("Enter user name: "), myUserNameText, 1, false)
                 .addComponent(
                     UI.PanelFactory.panel(forceCompletionStatus)
-                        .withComment("激活强力补全，效果等同于按两次补全快捷键，不建议开启，对性能影响较大")
+                        .withComment("效果等同于按两次补全快捷键，不建议开启，对性能影响较大")
                         .createPanel(), 1
-                ).addComponentFillVertically(JPanel(), 0).panel
+                ).addComponent(
+                    UI.PanelFactory.panel(completeMatchStatus)
+                        .withComment("尝试解决多音字显示拼音与预期不一致，目前输入预期多音拼音即可显示预期效果，暂无法实现该功能")
+                        .createPanel(), 1
+                )
+                .addComponentFillVertically(JPanel(), 0).panel
         inputPatternChoice.isEditable = false
+        // 禁用暂无法实现功能，可通过用户自定义多音字词频解决
+        completeMatchStatus.isEnabled = false
 
 //        panel {
 //            row {

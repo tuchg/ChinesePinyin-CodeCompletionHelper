@@ -18,6 +18,7 @@ fun createNotification(
     title: String, content: String,
     type: NotificationType, listener: NotificationListener
 ): Notification {
+    //2020.3 later
     return NotificationGroupManager.getInstance().getNotificationGroup("Pinyin Completion Helper Notification Group")
         .createNotification(title, content, type).setListener(listener)
 }
