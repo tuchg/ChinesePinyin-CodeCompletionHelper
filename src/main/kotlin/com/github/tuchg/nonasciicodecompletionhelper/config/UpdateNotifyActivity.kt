@@ -79,6 +79,7 @@ class UpdateNotifyActivity : StartupActivity {
             val notification = createNotification(
                 updateMsg(),
                 updateContent,
+                pluginId,
                 NotificationType.INFORMATION,
                 UrlOpeningListener(false)
             )

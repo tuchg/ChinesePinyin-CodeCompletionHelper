@@ -14,13 +14,16 @@ import java.awt.Point
  * @author: github.com/izhangzhihao
  * @description:
  */
-fun createNotification(
-    title: String, content: String,
-    type: NotificationType, listener: NotificationListener
-): Notification {
-    //2020.3 later
-    return NotificationGroupManager.getInstance().getNotificationGroup("Pinyin Completion Helper Notification Group")
-        .createNotification(title, content, type).setListener(listener)
+fun createNotification(title: String, content: String, displayId: String,
+                       type: NotificationType, listener: NotificationListener): Notification {
+    val group = NotificationGroup(
+        displayId,
+        NotificationDisplayType.STICKY_BALLOON,
+        true,
+        null,
+        null
+    )
+    return group.createNotification(title, content, type, listener)
 }
 
 fun showFullNotification(project: Project, notification: Notification) {
@@ -33,14 +36,12 @@ fun showFullNotification(project: Project, notification: Notification) {
     val target = RelativePoint(frame.component, Point(bounds.x + bounds.width, 20))
 
     try {
-        val balloon = NotificationsManagerImpl.createBalloon(
-            frame,
+        val balloon = NotificationsManagerImpl.createBalloon(frame,
             notification,
             true, // showCallout
             false, // hideOnClickOutside
             BalloonLayoutData.fullContent(),
-            project
-        )
+            project)
         balloon.show(target, Balloon.Position.atLeft)
     } catch (e: Exception) {
         notification.notify(project)
