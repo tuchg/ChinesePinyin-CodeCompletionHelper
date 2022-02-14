@@ -167,6 +167,7 @@
   from [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template)
 
 ## [Unreleased]
+## [0.1.9]
 ## [0.1.9] 2022-01-14
 ### Fixed
 - 修复 插件与平台的部分补全调用冲突问题
