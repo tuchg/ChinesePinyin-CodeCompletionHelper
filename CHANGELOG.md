@@ -1,27 +1,42 @@
 <!-- Keep a Changelog guide -> https://keepachangelog.com -->
 
 # Changelog
+
 ## [0.1.9] 2022-01-14
+
 ### Fixed
+
+- fix plugin with platform compatible
 - 修复 插件与平台的部分补全调用冲突问题
+- fix some bugs
 - 修复 推荐更新将 IDE至 2022.1 版本，可完美解决 kotlin、go、c/c++ 等语言的补全问题
+
 ### Changed
+
+- added wubi、shuangpin is coming soon
 - 预增 加五笔、双拼等支持，后续陆续支持
+- improved performance
 - 优化 插件性能优化
+- upgrade API version
 - 依赖 API升级
+
 ### Security
 
 ## [0.1.8] 2021-07-01
+
 ### Fixed
+
 - 修复 安装插件后输入首字母补全无返回问题 issues#45 #I3PJ0Y
 - 修复 中途智能输入问题 issues#44
 
 ### Security
 
-
 ## [0.1.7] 2021-03-07
+
 ### Fixed
+
 - 修复.输入越界异常
+
 ### Security
 
 ## [0.1.6] 2021-02-09
@@ -29,12 +44,15 @@
 ### Added
 
 ### Changed
+
 - 修改 列表优先级算法
+
 ### Deprecated
 
 ### Removed
 
 ### Fixed
+
 - 修复 JavaScript 补全失效问题
 - 修复 大多数语言长久以来的排序不能置顶问题
 
@@ -167,13 +185,3 @@
   from [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template)
 
 ## [Unreleased]
-## [0.1.9]
-## [0.1.9] 2022-01-14
-### Fixed
-- 修复 插件与平台的部分补全调用冲突问题
-- 修复 推荐更新将 IDE至 2022.1 版本，可完美解决 kotlin、go、c/c++ 等语言的补全问题
-### Changed
-- 预增 加五笔、双拼等支持，后续陆续支持
-- 优化 插件性能优化
-- 依赖 API升级
-### Security
