@@ -1,6 +1,16 @@
 <!-- Keep a Changelog guide -> https://keepachangelog.com -->
 
 # Changelog
+## [0.1.9] 2022-01-14
+### Fixed
+- 修复 插件与平台的部分补全调用冲突问题
+- 修复 推荐更新将 IDE至 2022.1 版本，可完美解决 kotlin、go、c/c++ 等语言的补全问题
+### Changed
+- 预增 加五笔、双拼等支持，后续陆续支持
+- 优化 插件性能优化
+- 依赖 API升级
+### Security
+
 ## [0.1.8] 2021-07-01
 ### Fixed
 - 修复 安装插件后输入首字母补全无返回问题 issues#45 #I3PJ0Y
@@ -157,16 +167,12 @@
   from [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template)
 
 ## [Unreleased]
-## [0.1.8]
-### Added
-
-### Changed
-    
-### Deprecated
-
-### Removed
-    
+## [0.1.9] 2022-01-14
 ### Fixed
-
-
+- 修复 插件与平台的部分补全调用冲突问题
+- 修复 推荐更新将 IDE至 2022.1 版本，可完美解决 kotlin、go、c/c++ 等语言的补全问题
+### Changed
+- 预增 加五笔、双拼等支持，后续陆续支持
+- 优化 插件性能优化
+- 依赖 API升级
 ### Security

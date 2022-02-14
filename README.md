@@ -14,7 +14,6 @@
 | <a href="https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper/issues">Issues</a>
 
 <!-- E -->
-
 > 初衷在于，一些业务上不太适合用英语表达的，可以用上直白的母语而非拼音，然后像平常写代码那样去调用母语所表达的东西，解决部分命名困难症🤔
 
 让你的 IDE 支持中文智能编码，享受和英文环境一致的中文智能编码体验
@@ -39,6 +38,8 @@
 如果对您有所帮助，别忘了给本项目<a href="https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper"> Github </a>主页一颗
 Star😁，你的支持是项目前进的动力
 
+> 💡 Intellij Platform 2022.1官方支持拼音首字母补全，本插件在此基础已可触发 go、c、kotlin等语言的正常补全，为获得更好体验，推荐原本效果不佳的用户更新至该版本
+
 
 <!-- Plugin description end -->
 
@@ -56,11 +57,11 @@ Star😁，你的支持是项目前进的动力
   <kbd>Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> > <kbd>Install plugin from disk...</kbd>
 
 ## ToDo
-- [ ] 现插件因Intellij部分语言前缀匹配器实现问题导致补全无法正常运作，经[IDEA-251113](https://github.com/JetBrains/intellij-community/commit/71a587c4b23667bb09d1f1dc830647b133953a9e) 支持已可运作，有望于 2022.1 EAP集成
+- [x] 现插件因Intellij部分语言前缀匹配器实现问题导致补全无法正常运作，经[IDEA-251113](https://github.com/JetBrains/intellij-community/commit/71a587c4b23667bb09d1f1dc830647b133953a9e) 支持已可运作，有望于 2022.1 EAP集成
 - [x] 支持多音字补全
 - [x] 已知Kotlin、Go等因语言内部实现冲突，需在中文前添加语言合法ascii字符才能正常触发
 - [x] 提供搜索/替换框内的拼音中文补全 
-- [ ] 添加可视化配置界面
+- [x] 添加可视化配置界面
 - [ ] 支持非全拼输入补全，如五笔、双拼等
 - [ ] [多语言编程的设想：将变量名与自然语言解耦](https://www.v2ex.com/t/701390)
 
