@@ -41,30 +41,16 @@ open class ChineseCompletionContributor() : CompletionContributor() {
         resultSet.runRemainingContributors(parameters) { r ->
             val element = r.lookupElement
             if (Pinyin.hasChinese(element.lookupString)) {
-                var flag = false
                 // 从多音字列表提取命中次数最多的一个
-                val closest = toPinyin(element.lookupString, Pinyin.FIRST_UP_CASE).let {
-                    if (it.size == 1) {
-                        return@let if (countContainsSomeChar(it[0].toLowerCase(), prefix) >= prefix.length) {
-                            flag = true
-                            it[0]
-                        } else null
-                    }
-                    it.maxByOrNull { str ->
-                        val count = countContainsSomeChar(str.toLowerCase(), prefix)
-                        if (count >= prefix.length) {
-                            flag = true
-                            count
-                        } else -1
-                    }
-                }
+                val closest = toPinyin(
+                    element.lookupString,
+                    Pinyin.FIRST_UP_CASE
+                ).maxByOrNull { str -> countContainsSomeChar(str.toLowerCase(), prefix) }
                 closest?.let {
                     //todo 完全匹配的优先级需提高
-                    val priority = if (prefix.isNotEmpty()) StringUtil.difference(it, prefix) * 1000.0 else 5.0
-                    if (flag) {
-                        // 追加补全列表
-                        renderElementHandle(element, it, priority, resultSet, r)
-                    }
+                    val priority = if (prefix.isNotEmpty()) StringUtil.difference(it, prefix) * 100.0 else 5.0
+                    // 追加补全列表
+                    renderElementHandle(element, it, priority, resultSet, r)
                 }
             } else
                 resultSet.passResult(r)
