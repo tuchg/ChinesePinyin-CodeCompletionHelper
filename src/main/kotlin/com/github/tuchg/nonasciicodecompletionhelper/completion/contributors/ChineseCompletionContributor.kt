@@ -15,7 +15,7 @@ import pansong291.simplepinyin.Pinyin
  * @date 2020-8-1
  */
 // 自定义了的语言
-val languages = arrayOf("Go", "Kotlin")
+val languages = arrayOf("Go", "Kotlin", "C#")
 
 open class ChineseCompletionContributor() : CompletionContributor() {
     override fun fillCompletionVariants(parameters: CompletionParameters, result: CompletionResultSet) {
