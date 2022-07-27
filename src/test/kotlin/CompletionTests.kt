@@ -36,6 +36,16 @@ class CompletionTests : CompletionAutoPopupTestCase() {
         Assert.assertEquals("方法", 补全项.get(1).lookupString)
     }
 
+    fun `test @Java补全中文命名`() {
+        myFixture.configureByText("Test.java", "class a { int 吃了; int 信息 = <caret> }")
+        myFixture.type("吃")
+        val 补全项 = myFixture.completeBasic()
+        Assert.assertTrue("补全项不应为空", 补全项.isNotEmpty())
+        Assert.assertEquals(2, 补全项.size)
+        Assert.assertEquals("吃了", 补全项.get(0).lookupString)
+        Assert.assertEquals("吃了", 补全项.get(1).lookupString)
+    }
+
     fun `test @Java输入错误后无补全`() {
         myFixture.configureByText("Test.java", "class a { int 方法() { <caret> } }")
         myFixture.type("fo")

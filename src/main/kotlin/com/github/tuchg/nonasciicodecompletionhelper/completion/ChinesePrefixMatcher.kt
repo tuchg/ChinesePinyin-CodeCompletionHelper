@@ -16,14 +16,17 @@ class ChinesePrefixMatcher(prefixMatcher: PrefixMatcher) : PlainPrefixMatcher(pr
 
     override fun prefixMatches(name: String): Boolean {
 //        log.info { "${prefix} - ${name} ${myMatcher.matches(name)}" }
-        return if (Pinyin.hasChinese(name)) {
+        if (originalMatcher?.prefixMatches(name) == true) {
+            return true
+        }
+        if (Pinyin.hasChinese(name)) {
             for (s in toPinyin(name, Pinyin.LOW_CASE)) {
                 if (countContainsSomeChar(s, prefix) >= prefix.length) {
                     return true
                 }
             }
-            return false
-        } else originalMatcher?.prefixMatches(name) == true
+        }
+        return false
     }
 
 
