@@ -13,7 +13,7 @@ import com.intellij.codeInsight.lookup.LookupElement
  */
 class FixGoCompletionContributor : ChineseCompletionContributor() {
     override val renderElementHandle: (element: LookupElement, pinyin: String, priority: Double, rs: CompletionResultSet, r: CompletionResult) -> Unit =
-        { element: LookupElement, pinyin: String, priority: Double, rs: CompletionResultSet, r: CompletionResult ->
+        { element: LookupElement, pinyin: String, priority: Double, rs: CompletionResultSet, _: CompletionResult ->
             val chineseLookupElement =
                 ChineseLookupElement(element.lookupString, pinyin, element.psiElement?.getIcon(0))
                     .copyFrom(element)
