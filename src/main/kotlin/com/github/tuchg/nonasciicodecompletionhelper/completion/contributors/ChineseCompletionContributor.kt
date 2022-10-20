@@ -18,6 +18,13 @@ import pansong291.simplepinyin.Pinyin
 val languages = arrayOf("Go", "Kotlin", "C#")
 
 open class ChineseCompletionContributor() : CompletionContributor() {
+    private val itemSet = hashSetOf<String>()
+
+    override fun beforeCompletion(context: CompletionInitializationContext) {
+        super.beforeCompletion(context)
+        itemSet.clear()
+    }
+
     override fun fillCompletionVariants(parameters: CompletionParameters, result: CompletionResultSet) {
         val pluginSettingsState = PluginSettingsState.instance
 
@@ -25,7 +32,6 @@ open class ChineseCompletionContributor() : CompletionContributor() {
         if (languages.contains(parameters.originalFile.fileType.name) && this.javaClass.simpleName == "ChineseCompletionContributor") {
             return
         }
-
         //feature:可暴力解决 bug:二次激活获取补全 但性能影响较大
         if (pluginSettingsState.enableForceCompletion) {
             parameters.withInvocationCount(2)
@@ -41,6 +47,9 @@ open class ChineseCompletionContributor() : CompletionContributor() {
         resultSet.runRemainingContributors(parameters) { r ->
             val element = r.lookupElement
             if (Pinyin.hasChinese(element.lookupString)) {
+                if (itemSet.contains(element.lookupString)) {
+                    return@runRemainingContributors
+                }
                 // 从多音字列表提取命中次数最多的一个
                 val closest = toPinyin(
                     element.lookupString,
@@ -51,6 +60,7 @@ open class ChineseCompletionContributor() : CompletionContributor() {
                     val priority = if (prefix.isNotEmpty()) StringUtil.difference(it, prefix) * 2.0 else 1.0
                     // 追加补全列表
                     renderElementHandle(element, it, priority, resultSet, r)
+                    itemSet.add(element.lookupString)
                 }
             } else
                 resultSet.passResult(r)
