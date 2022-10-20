@@ -24,7 +24,7 @@ class ChineseLookupElement(
      * 据此进行文本匹配
      */
     override fun getLookupString(): String {
-        return original!!
+        return original ?: ""
     }
 
     /**

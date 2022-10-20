@@ -48,7 +48,7 @@ open class ChineseCompletionContributor() : CompletionContributor() {
                 ).maxByOrNull { str -> countContainsSomeChar(str.toLowerCase(), prefix) }
                 closest?.let {
                     //todo 完全匹配的优先级需提高
-                    val priority = if (prefix.isNotEmpty()) StringUtil.difference(it, prefix) * 100.0 else 5.0
+                    val priority = if (prefix.isNotEmpty()) StringUtil.difference(it, prefix) * 2.0 else 1.0
                     // 追加补全列表
                     renderElementHandle(element, it, priority, resultSet, r)
                 }
@@ -66,6 +66,8 @@ open class ChineseCompletionContributor() : CompletionContributor() {
                     .copyFrom(element)
             val withPriority = PrioritizedLookupElement.withPriority(chineseLookupElement, priority)
             val wrap = CompletionResult.wrap(withPriority, r.prefixMatcher, r.sorter)
-            rs.passResult(wrap!!)
-        };
+            if (wrap != null) {
+                rs.passResult(wrap)
+            }
+        }
 }

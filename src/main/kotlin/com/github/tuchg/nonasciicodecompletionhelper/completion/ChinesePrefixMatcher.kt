@@ -31,5 +31,9 @@ class ChinesePrefixMatcher(prefixMatcher: PrefixMatcher) : PlainPrefixMatcher(pr
 
 
     override fun cloneWithPrefix(prefix: String) =
-        if (prefix == this.prefix) this else ChinesePrefixMatcher(originalMatcher!!.cloneWithPrefix(prefix))
+        if (prefix == this.prefix || originalMatcher == null) this else ChinesePrefixMatcher(
+            originalMatcher!!.cloneWithPrefix(
+                prefix
+            )
+        )
 }
