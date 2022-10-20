@@ -95,7 +95,7 @@ Let your IDE support Chinese programming, and enjoy the Chinese intelligent codi
 
 Compatible with all the Intellij Platform product, indiscriminate Chinese programming, Java, Kotlin, JavaScript, C#，Golang, or Haskell all support...
 
-> 为啥这里会有一段不符合插件受众的别扭英文介绍💬  <a href="https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper/issues/5">#issues-5</a>
+> 应JBrains要求添加以上《国际化》说明 <a href="https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper/issues/5">#5</a>
 
 <h3>中文</h3>
 """
