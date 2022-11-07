@@ -1,5 +1,6 @@
 package com.github.tuchg.nonasciicodecompletionhelper.config
 
+import com.github.tuchg.nonasciicodecompletionhelper.spelling.convertRIMEDict
 import com.github.tuchg.nonasciicodecompletionhelper.utils.createNotification
 import com.github.tuchg.nonasciicodecompletionhelper.utils.showFullNotification
 import com.intellij.ide.plugins.IdeaPluginDescriptor
@@ -15,7 +16,7 @@ import com.intellij.openapi.startup.StartupActivity
  * @date: 2020/11/20 13:42
  * @description:
  */
-class UpdateNotifyActivity : StartupActivity {
+class StartupActivity : StartupActivity {
 
     override fun runActivity(project: Project) {
 //        removeIfInstalled()

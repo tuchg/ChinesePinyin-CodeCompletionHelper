@@ -1,7 +1,8 @@
 package com.github.tuchg.nonasciicodecompletionhelper.completion
 
+import com.github.tuchg.nonasciicodecompletionhelper.spelling.CaseType
+import com.github.tuchg.nonasciicodecompletionhelper.spelling.spellings
 import com.github.tuchg.nonasciicodecompletionhelper.utils.countContainsSomeChar
-import com.github.tuchg.nonasciicodecompletionhelper.utils.toPinyin
 import com.intellij.codeInsight.completion.PlainPrefixMatcher
 import com.intellij.codeInsight.completion.PrefixMatcher
 import pansong291.simplepinyin.Pinyin
@@ -20,7 +21,7 @@ class ChinesePrefixMatcher(prefixMatcher: PrefixMatcher) : PlainPrefixMatcher(pr
             return true
         }
         if (Pinyin.hasChinese(name)) {
-            for (s in toPinyin(name, Pinyin.LOW_CASE)) {
+            for (s in spellings(name, CaseType.LOW_CASE)) {
                 if (countContainsSomeChar(s, prefix) >= prefix.length) {
                     return true
                 }

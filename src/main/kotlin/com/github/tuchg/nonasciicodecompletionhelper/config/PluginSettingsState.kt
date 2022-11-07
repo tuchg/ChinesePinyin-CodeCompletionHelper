@@ -14,16 +14,18 @@ import com.intellij.util.xmlb.XmlSerializerUtil.copyBean
 @State(name = "CCompletionHelperSettings", storages = [(Storage("pinyin_completion_helper.xml"))])
 class PluginSettingsState : PersistentStateComponent<PluginSettingsState> {
     // 提示方式设置，如全拼、五笔等
-    public var inputPattern: PatternType = PatternType.全拼
+    var inputPattern = PatternType.全拼
+
     // 自定义码表，支持自定义码表 并提供图形支持
+    val dict = mutableMapOf<Char, ArrayList<String>>()
 
     // 用于解决一词多音不正确显示问题的选项
-    public var enableCompleteMatch: Boolean = true
+    var enableCompleteMatch = true
 
     // 激活强力补全 用于暴力补全部分补全未显示的问题
-    public var enableForceCompletion: Boolean = false
+    var enableForceCompletion = false
 
-    // todo 默认增加一个禁用 Ascii intention 的功能
+    // todo 默认增加一个禁用 Ascii、小写开头 intention 的功能
 
     companion object {
         val instance: PluginSettingsState
@@ -40,4 +42,12 @@ class PluginSettingsState : PersistentStateComponent<PluginSettingsState> {
     override fun loadState(state: PluginSettingsState) {
         copyBean(state, this)
     }
+}
+
+
+enum class PatternType {
+    全拼,
+    五笔,
+    双拼,
+    自定义
 }
