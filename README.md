@@ -62,8 +62,10 @@ Star😁，你的支持是项目前进的动力
 - [x] 已知Kotlin、Go等因语言内部实现冲突，需在中文前添加语言合法ascii字符才能正常触发
 - [x] 提供搜索/替换框内的拼音中文补全 
 - [x] 添加可视化配置界面
-- [ ] 支持非全拼输入补全，如五笔、双拼等
+- [x] 支持非全拼输入补全，如五笔、双拼等 ( [RIME](https://github.com/rime) 导入)
 - [ ] [多语言编程的设想：将变量名与自然语言解耦](https://www.v2ex.com/t/701390)
+- [ ] [基于 IDE 的中文输入法](https://gitee.com/Program-in-Chinese/vscode_Chinese_Input_Assistant/issues/I5YGO3)
+- [ ] [中文代码的特殊排版](https://github.com/tuchg/ChinesePinyin-CodeCompletionHelper/issues/67)
 
 ## 相关资源
 
