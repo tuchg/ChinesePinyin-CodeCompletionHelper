@@ -1,15 +1,9 @@
 package com.github.tuchg.nonasciicodecompletionhelper.config
 
-import com.intellij.openapi.ui.ComboBox
-import com.intellij.ui.components.JBCheckBox
-import com.intellij.ui.components.JBLabel
-import com.intellij.ui.components.JBTextField
-import com.intellij.util.ui.FormBuilder
-import com.intellij.util.ui.UI
-import org.jetbrains.annotations.NotNull
-import javax.swing.JComponent
-import javax.swing.JPanel
-
+import com.github.tuchg.nonasciicodecompletionhelper.spelling.convertRIMEDict
+import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory
+import com.intellij.openapi.ui.DialogPanel
+import com.intellij.ui.dsl.builder.*
 
 /**
  * View层
@@ -17,66 +11,75 @@ import javax.swing.JPanel
  * @date: 10/10/2021 09:56
  */
 class PluginSettingsView {
-    private var myMainPanel: JPanel? = null
-    private val myUserNameText = JBTextField()
-    private val inputPatternChoice = ComboBox<String>()
-    private val forceCompletionStatus = JBCheckBox("增强补全")
-    private val completeMatchStatus = JBCheckBox("多音字匹配纠正")
+    // V-M 的双向绑定
+    val 配置 = 数据模型()
+    var panel: DialogPanel
 
     init {
-        myMainPanel =
-            FormBuilder.createFormBuilder()
-                .addLabeledComponent(JBLabel("Enter user name: "), myUserNameText, 1, false)
-                .addComponent(
-                    UI.PanelFactory.panel(forceCompletionStatus)
-                        .withComment("效果等同于按两次补全快捷键，不建议开启，对性能影响较大")
-                        .createPanel(), 1
-                ).addComponent(
-                    UI.PanelFactory.panel(completeMatchStatus)
-                        .withComment("尝试解决多音字显示拼音与预期不一致，目前输入预期多音拼音即可显示预期效果，暂无法实现该功能")
-                        .createPanel(), 1
-                )
-                .addComponentFillVertically(JPanel(), 0).panel
-        inputPatternChoice.isEditable = false
-        // 禁用暂无法实现功能，可通过用户自定义多音字词频解决
-        completeMatchStatus.isEnabled = false
+        panel = panel {
+            group("拼写模式") {
+                buttonsGroup(indent = false) {
+                    row {
+                        val 选项 = PatternType.values().map {
+                            radioButton(it.name, it)
+                        }
 
-//        panel {
-//            row {
-//                myIdeaUserStatus
-//                comment("测试")
-//            }
-//        }
+                        val 自定义 = 选项.last()
+
+                        textFieldWithBrowseButton(
+                            fileChooserDescriptor = FileChooserDescriptorFactory
+                                .createSingleFileDescriptor("yaml")
+                        )
+                            .bindText(配置::自定义字典位置)
+                            .visibleIf(自定义.selected)
+
+                        button("重载字典") { 刷新自定义字典() }
+                            .visibleIf(自定义.selected)
+
+                    }.rowComment("选择输入模式")
+                }.bind(配置::输入模式)
+            }
+
+            group("杂项配置") {
+                row {
+                    checkBox("增强补全")
+                        .comment("效果等同于按两次补全快捷键，不建议开启，对性能影响较大")
+                        .bindSelected(配置::增强补全)
+                }
+                row {
+                    checkBox("多音字匹配纠正")
+                        .comment("尝试解决多音字显示拼音与预期不一致，目前输入预期多音拼音即可显示预期效果")
+                        .bindSelected(配置::多音字匹配纠正)
+                        .enabled(false)
+                }
+                row {
+                    checkBox("禁用 ASCII 命名检查")
+                        .comment("一键关闭 ASCII 命名检查，避免中文标识符的警示效果")
+                        .bindSelected(配置::`禁用 ASCII 命名检查`)
+                        .enabled(false)
+                }
+                row {
+                    checkBox("禁用驼峰命名检查")
+                        .comment("一键关闭驼峰命名检查，避免中文标识符的警示效果")
+                        .bindSelected(配置::禁用驼峰命名检查)
+                        .enabled(false)
+                }
+            }
+        }
     }
 
-    fun getPanel(): JPanel? {
-        return myMainPanel
+    private fun 刷新自定义字典() {
+        convertRIMEDict(配置.自定义字典位置)
     }
-
-    fun getPreferredFocusedComponent(): JComponent {
-        return myUserNameText
-    }
-
-    @NotNull
-    fun getUserNameText(): String? {
-        return myUserNameText.text
-    }
-
-    fun setUserNameText(@NotNull newText: String?) {
-        myUserNameText.text = newText
-    }
-
-    fun getCompleteMatchStatus(): Boolean = completeMatchStatus.isSelected
-
-    fun setCompleteMatchStatus(newStatus: Boolean) {
-        completeMatchStatus.isSelected = newStatus
-    }
-
-    fun getForceCompletionStatus(): Boolean = forceCompletionStatus.isSelected
-
-    fun setForceCompletionStatus(newStatus: Boolean) {
-        forceCompletionStatus.isSelected = newStatus
-    }
-
 
 }
+
+data class 数据模型(
+    var 增强补全: Boolean = false,
+    var 多音字匹配纠正: Boolean = false,
+    var `禁用 ASCII 命名检查`: Boolean = false,
+    var 禁用驼峰命名检查: Boolean = false,
+
+    var 输入模式: PatternType = PatternType.全拼,
+    var 自定义字典位置: String = "",
+)

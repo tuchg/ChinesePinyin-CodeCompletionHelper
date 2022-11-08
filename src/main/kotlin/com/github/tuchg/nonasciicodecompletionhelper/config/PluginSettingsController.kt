@@ -1,6 +1,8 @@
 package com.github.tuchg.nonasciicodecompletionhelper.config
 
+import com.github.tuchg.nonasciicodecompletionhelper.spelling.convertRIMEDict
 import com.intellij.openapi.options.Configurable
+import com.intellij.openapi.ui.DialogPanel
 import javax.swing.JComponent
 
 /**
@@ -12,47 +14,57 @@ import javax.swing.JComponent
  * Provides controller functionality for application settings.
  */
 class PluginSettingsController : Configurable {
-    private var mySettingsComponent: PluginSettingsView? = null
+    private var settingsComp: PluginSettingsView? = null
+    private lateinit var model: 数据模型
+    private lateinit var state: PluginSettingsState
+    private lateinit var panel: DialogPanel
 
-    // A default constructor with no arguments is required because this implementation
-    // is registered as an applicationConfigurable EP
-    override fun getDisplayName(): String = "测试界面"
+    override fun getDisplayName(): String = "配置中心"
 
-    override fun getPreferredFocusedComponent(): JComponent {
-        return mySettingsComponent?.getPreferredFocusedComponent()!!
-    }
-
-    override fun createComponent(): JComponent? {
-        mySettingsComponent = PluginSettingsView()
-        return mySettingsComponent?.getPanel()
+    override fun createComponent(): JComponent {
+        settingsComp = PluginSettingsView()
+        state = PluginSettingsState.instance
+        panel = settingsComp!!.panel
+        model = settingsComp!!.配置
+        return panel
     }
 
     override fun isModified(): Boolean {
-        val settings: PluginSettingsState = PluginSettingsState.instance
-        var modified: Boolean =
-            mySettingsComponent?.getForceCompletionStatus()?.equals(settings.enableForceCompletion) == false
-//        modified =
-//            modified or (mySettingsComponent?.getCompleteMatchStatus()?.equals(settings.enableCompleteMatch) == false)
+        var modified: Boolean = model.增强补全 != state.enableForceCompletion
+        modified = modified or (model.多音字匹配纠正 != state.enableCompleteMatch)
+        modified = modified or (model.输入模式 != state.inputPattern)
+        modified = modified or (model.`禁用 ASCII 命名检查` != state.disableAsciiInspection)
+        modified = modified or (model.禁用驼峰命名检查 != state.disableCamelInspection)
+        modified = modified or (model.自定义字典位置 != state.customLocation)
+
         return modified
     }
 
     override fun apply() {
-        val settings: PluginSettingsState = PluginSettingsState.instance
-//        settings.ideaStatus = mySettingsComponent?.getIdeaUserStatus()
-        settings.enableForceCompletion = mySettingsComponent?.getForceCompletionStatus() == true
-//        settings.enableCompleteMatch = mySettingsComponent?.getCompleteMatchStatus() == true
+        panel.apply()
+        state.enableForceCompletion = model.增强补全
+        state.enableCompleteMatch = model.多音字匹配纠正
+        state.inputPattern = model.输入模式
+        state.disableCamelInspection = model.禁用驼峰命名检查
+        state.disableAsciiInspection = model.`禁用 ASCII 命名检查`
+        convertRIMEDict(model.自定义字典位置)
+        state.customLocation = model.自定义字典位置
+
     }
 
-    /**
-     * 同步状态至页面显示
-     */
+
     override fun reset() {
-        val settings: PluginSettingsState = PluginSettingsState.instance
-        mySettingsComponent?.setForceCompletionStatus(settings.enableForceCompletion)
-//        mySettingsComponent?.setCompleteMatchStatus(settings.enableCompleteMatch)
+        model.增强补全 = state.enableForceCompletion
+        model.多音字匹配纠正 = state.enableCompleteMatch
+        model.输入模式 = state.inputPattern
+        model.`禁用 ASCII 命名检查` = state.disableAsciiInspection
+        model.禁用驼峰命名检查 = state.disableCamelInspection
+        model.自定义字典位置 = state.customLocation
+//                convertRIMEDict(state.customLocation)
+        panel.reset()
     }
 
     override fun disposeUIResources() {
-        mySettingsComponent = null
+        settingsComp = null
     }
 }

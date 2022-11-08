@@ -2,9 +2,12 @@ package com.github.tuchg.nonasciicodecompletionhelper.spelling
 
 import com.github.tuchg.nonasciicodecompletionhelper.config.PluginSettingsState
 import java.io.File
-import java.util.*
+import kotlin.collections.ArrayList
 
 fun convertRIMEDict(yamlPath: String = "") {
+    if (yamlPath.isEmpty()) {
+        return
+    }
     val lastDict = PluginSettingsState.instance.dict
     lastDict.clear()
 

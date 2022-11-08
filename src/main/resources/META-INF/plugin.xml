@@ -23,9 +23,8 @@
         <applicationService
                 serviceImplementation="com.github.tuchg.nonasciicodecompletionhelper.config.PluginSettingsState"/>
         <applicationConfigurable
-                parentId="tools"
                 instance="com.github.tuchg.nonasciicodecompletionhelper.config.PluginSettingsController"
-                displayName="Pinyin Completion Helper"
+                displayName="中文编码补全助手"
         />
         <notificationGroup id="Pinyin Completion Helper Notification Group" displayType="STICKY_BALLOON"/>
 
