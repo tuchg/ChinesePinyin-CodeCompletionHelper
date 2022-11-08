@@ -70,9 +70,8 @@ Star😁，你的支持是项目前进的动力
 ## 相关资源
 
 * <a href="https://gitee.com/Program-in-Chinese/vscode_Chinese_Input_Assistant">中文代码快速补全 VS Code 插件</a>
-* <a href="https://github.com/duolabmeng6/pyefun">Python 易函数 (语言标准API汉化库)</a>
-* <a href="https://github.com/duolabmeng6/goefun">Golang 易函数</a>
 * <a href="https://github.com/stratosblue/ChinesePinyinIntelliSenseExtender">VisualStudio汉语拼音拓展</a>
+* <a href="https://github.com/duolabmeng6/pyefun">Python 易函数 (语言标准API汉化库)</a>
 
 ## 项目维护
 
