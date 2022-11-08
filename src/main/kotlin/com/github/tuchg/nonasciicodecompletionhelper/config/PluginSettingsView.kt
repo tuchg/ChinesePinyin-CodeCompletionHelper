@@ -36,7 +36,23 @@ class PluginSettingsView {
                         button("重载字典") { 刷新自定义字典() }
                             .visibleIf(自定义.selected)
 
-                    }.rowComment("选择输入模式")
+                    }.rowComment(
+                        // language = html
+                        """
+                            选择拼写模式，插件默认内置提供全拼方式，双拼、五笔等拼写模式可通过使用开源项目 <a href="https://github.com/rime"> rime 输入法</a> 下丰富的码表生态资源实现
+                            <br>
+                            插件所需文件格式名一般为 <b>`<词典名>.dict.yaml`</b>
+                            <br>
+                            部分例子如：
+                            <ul>
+                                <li><a href='https://github.com/rime/rime-wubi/blob/master/wubi86.dict.yaml'>五笔86</a></li>
+                                <li><a href='https://github.com/ryan00zou/rime-xhup/blob/xhup/flypyzc.dict.yaml'>小鹤双拼</a></li>
+                                <li>......等等海量优秀的rime拼写方案生态都可复用</li>
+                            </ul>
+                            <br>
+                            下载后，直接导入上述中对应文件即可享用各类拼写模式。
+                            """
+                    )
                 }.bind(配置::输入模式)
             }
 
