@@ -24,7 +24,7 @@ fun spellings(text: String, caseType: CaseType): Array<String> {
 
 
         else -> {
-            取多音字组合(text) { 自定义拼写(state!!.dict, it, caseType) }
+            取多音字组合(text) { 自定义拼写(state!!.dict, it.toString(), caseType) }
         }
     }
 

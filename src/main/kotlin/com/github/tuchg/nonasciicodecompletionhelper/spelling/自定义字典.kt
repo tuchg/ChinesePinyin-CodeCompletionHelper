@@ -17,15 +17,16 @@ fun convertRIMEDict(yamlPath: String = "") {
         val row = it.split("\t")
         if (row.size <= 1 || row[0].length != 1) return@forEach
 
-        if (lastDict.containsKey(row[0][0])) {
-            lastDict[row[0][0]]!!.add(row[1])
+        val key = row[0][0].toString()
+        if (lastDict.containsKey(key)) {
+            lastDict[key]!!.add(row[1])
         } else {
-            lastDict[row[0][0]] = arrayListOf(row[1])
+            lastDict[key] = arrayListOf(row[1])
         }
     }
 }
 
-fun 自定义拼写(dict: MutableMap<Char, ArrayList<String>>, c: Char, caseType: CaseType): Array<String> =
+fun 自定义拼写(dict: MutableMap<String, ArrayList<String>>, c: String, caseType: CaseType): Array<String> =
     dict[c]?.map { s ->
         when (caseType) {
             CaseType.FIRST_UP_CASE -> {
