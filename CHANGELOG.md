@@ -1,6 +1,23 @@
 <!-- Keep a Changelog guide -> https://keepachangelog.com -->
 
 # Changelog
+## [1.0.0] 2022-11-09
+### Added
+- ✨ 支持导入 RIME 字典以支持各类输入方式 (五笔、双拼等)
+- ✨ support to import dict of rime
+### Changed
+- ⚡ 降低内存占用
+- ⚡ lower memory used 
+
+
+## [0.1.11] 2022-10-20
+
+### Fixed
+
+- 🐛 repeatedly completion items
+- 🐛 部分语言出现的重复补全问题
+- 🐛 NPE problem
+- 🐛 偶现的空指针问题
 
 ## [0.1.9] 2022-01-14
 
@@ -185,3 +202,4 @@
   from [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template)
 
 ## [Unreleased]
+## [0.1.11]
