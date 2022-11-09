@@ -5,7 +5,7 @@
 [![Downloads](https://img.shields.io/jetbrains/plugin/d/14838.svg)](https://plugins.jetbrains.com/plugin/14838)
 ![GitHub Repo stars](https://img.shields.io/github/stars/tuchg/ChinesePinyin-CodeCompletionHelper?color=green&logo=github&style=flat)
 [![star](https://gitee.com/tuchg/ChinesePinyin-CodeCompletionHelper/badge/star.svg?theme=white)](https://gitee.com/tuchg/ChinesePinyin-CodeCompletionHelper/stargazers)
-![Java演示](doc/截图/java/java.GIF)
+![Kotlin演示](doc/截图/kotlin/kotlin.gif)
 
 <!-- Plugin description -->
 
@@ -21,7 +21,7 @@
 * 拼音输入补全，如果上下文存在 `中文` 标识符, 输入 zw，则会补全提示中文【**Z**hong**W**en】
 * 多音字无差别补全
 * 函数名、变量名、类名等等标识符，只要能用中文标识的通通都支持
-* 支持双拼、五笔等各式输入方法
+* 支持双拼、五笔等各式输入方式
 
 兼容 JB 全家桶，无差别中文编码，无论是 Java、Python、JavaScript、Kotlin、Golang、、C#、C 艹 亦或者 Haskell 等等通通都支持
 
@@ -29,9 +29,9 @@
 
 推荐使用中文命名标识符的场景：
 
-* 传统文化背景的相关产品开发命名问题
+* 因传统文化背景的相关产品标识命名而耽误进度
 * 现有项目充斥大量缩写歧义拼音
-* 团队开发人员英语素质参差不齐
+* 全中文母语开发团队英语素质参差不齐
 
 > 提示：当提示 `no ascii` 时，可按提示电灯泡关闭该提示
 
@@ -57,9 +57,8 @@ Star😁，你的支持是项目前进的动力
   <kbd>Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> > <kbd>Install plugin from disk...</kbd>
 
 ## ToDo
-- [x] 现插件因Intellij部分语言前缀匹配器实现问题导致补全无法正常运作，经[IDEA-251113](https://github.com/JetBrains/intellij-community/commit/71a587c4b23667bb09d1f1dc830647b133953a9e) 支持已可运作，有望于 2022.1 EAP集成
 - [x] 支持多音字补全
-- [x] 已知Kotlin、Go等因语言内部实现冲突，需在中文前添加语言合法ascii字符才能正常触发
+- [x] 已知Kotlin、Go等因语言内部实现冲突，需在中文前添加语言合法ascii字符才能正常触发，经[IDEA-251113](https://github.com/JetBrains/intellij-community/commit/71a587c4b23667bb09d1f1dc830647b133953a9e) 支持已可运作，已于 `2022.1 EAP`集成
 - [x] 提供搜索/替换框内的拼音中文补全 
 - [x] 添加可视化配置界面
 - [x] 支持非全拼输入补全，如五笔、双拼等 ( [RIME](https://github.com/rime) 导入)
@@ -73,14 +72,12 @@ Star😁，你的支持是项目前进的动力
 * <a href="https://github.com/stratosblue/ChinesePinyinIntelliSenseExtender">VisualStudio汉语拼音拓展</a>
 * <a href="https://github.com/duolabmeng6/pyefun">Python 易函数 (语言标准API汉化库)</a>
 
-## 项目维护
+## 参与项目
 
-欢迎对本项目感兴趣的同学PR，共同维护
-[emoji commit参考](https://gitmoji.carloscuesta.me/)
+欢迎对本项目感兴趣的同学PR，共同维护，commit message 遵守
+[emoji-commit](https://gitmoji.carloscuesta.me/) 规范
 
 了解如何参与维护开发及现有bug思路可参考[此处](doc/Bugs解决思路.md)
-
-![Python 演示](doc/截图/python/py.GIF)
 
 ## Thanks
 
