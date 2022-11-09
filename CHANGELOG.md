@@ -202,4 +202,5 @@
   from [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template)
 
 ## [Unreleased]
+## [1.0.0]
 ## [0.1.11]
