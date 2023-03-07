@@ -5,16 +5,14 @@ import java.io.File
 import kotlin.collections.ArrayList
 
 fun convertRIMEDict(yamlPath: String = "") {
-    if (yamlPath.isEmpty()) {
-        return
-    }
+    yamlPath.takeIf { it.isNotEmpty() } ?: return
+
     val lastDict = PluginSettingsState.instance.dict
     lastDict.clear()
 
     File(yamlPath).readLines(
         Charsets.UTF_8
-    ).map { it.trim() }.forEach {
-        val row = it.split("\t")
+    ).map { it.trim().split("\t") }.forEach {row->
         if (row.size <= 1 || row[0].length != 1) return@forEach
 
         val key = row[0][0].toString()
@@ -38,4 +36,4 @@ fun 自定义拼写(dict: MutableMap<String, ArrayList<String>>, c: String, case
             }
         }
     }?.toTypedArray()
-        ?: arrayOf(c.toString())
+        ?: arrayOf(c)
