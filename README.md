@@ -5,7 +5,6 @@
 [![Downloads](https://img.shields.io/jetbrains/plugin/d/14838.svg)](https://plugins.jetbrains.com/plugin/14838)
 ![GitHub Repo stars](https://img.shields.io/github/stars/tuchg/ChinesePinyin-CodeCompletionHelper?color=green&logo=github&style=flat)
 [![star](https://gitee.com/tuchg/ChinesePinyin-CodeCompletionHelper/badge/star.svg?theme=white)](https://gitee.com/tuchg/ChinesePinyin-CodeCompletionHelper/stargazers)
-![Kotlin演示](doc/截图/kotlin/kotlin.gif)
 
 <!-- Plugin description -->
 
@@ -15,6 +14,9 @@
 
 <!-- E -->
 > 初衷在于，一些业务上不太适合用英语表达的，可以用上直白的母语而非拼音，然后像平常写代码那样去调用母语所表达的东西，解决部分命名困难症🤔
+> 
+
+![演示](banner.png)
 
 让你的 IDE 支持中文智能编码，享受和英文环境一致的中文智能编码体验
 
