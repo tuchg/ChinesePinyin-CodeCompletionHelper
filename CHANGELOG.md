@@ -1,6 +1,11 @@
 <!-- Keep a Changelog guide -> https://keepachangelog.com -->
 
 # Changelog
+
+## [1.0.1] 2023-06-06
+### Fixed
+- :rewind: ":bug: 修复 C# 图标丢失问题"
+
 ## [1.0.0] 2022-11-09
 ### Added
 - ✨ 支持导入 RIME 字典以支持各类输入方式 (五笔、双拼等)
