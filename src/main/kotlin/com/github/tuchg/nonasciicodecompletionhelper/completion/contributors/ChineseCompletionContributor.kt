@@ -17,7 +17,7 @@ import pansong291.simplepinyin.Pinyin
  */
 
 // 需特殊处理的语言
-private val languages = arrayOf("Go", "Kotlin", "C#")
+private val languages = arrayOf("Go", "Kotlin")
 
 // 补全项去重 Set结构
 private val itemSet = hashSetOf<String>()
