@@ -81,13 +81,15 @@ Star😁，你的支持是项目前进的动力
 
 了解如何参与维护开发及现有bug思路可参考[此处](doc/Bugs解决思路.md)
 
-## Thanks
+## Star History
 
-Development powered by [JetBrains](https://www.jetbrains.com/?from=ChinesePinyinCodeCompletionHelper).
-
-[![JetBrains](jetbrains.svg)](https://www.jetbrains.com/?from=ChinesePinyinCodeCompletionHelper)
-
-Whichever technologies you use, there's a JetBrains tool to match.
+<a href="https://star-history.com/#tuchg/ChinesePinyin-CodeCompletionHelper&Date">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=tuchg/ChinesePinyin-CodeCompletionHelper&type=Date&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=tuchg/ChinesePinyin-CodeCompletionHelper&type=Date" />
+    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=tuchg/ChinesePinyin-CodeCompletionHelper&type=Date" />
+  </picture>
+</a>
 
 ---
 Plugin based on the [IntelliJ Platform Plugin Template][template].
